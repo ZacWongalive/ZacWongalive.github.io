@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[markdown的使用]]></title>
+    <url>%2F2019%2F06%2F02%2Fmarkdown%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[关于空格的问题 无论是写入多少个连续的space 或者 Tab 或者 Enter，一般渲染之后都是只会显示一个空格. 如果想要进行硬换行的话需要在上一行写上两个 space 和 Enter就像这样 如果两行文字之间存在一个或者多个空行那么这些空行渲染后只会显示一行空行，如果在书写的时候 两行空开了那么渲染后自动空一行 就像这样 关于段落问题 在所有段落前后空行就是了 例如： 这是段落一 这是段落二 这是段落三 在段落当中我们还可以使用空行 例如： 这是段落一 你懂的 这是段落二 你也懂的 这是段落三 你更懂的 关于分割线不用多说 关于列表不用多说 列表前面要加上# 然后再换行加上*或者 1. 如果有列表的嵌套使用的话在子列表那块要加上Tab键进行缩进 做一件事情 做另外一件事情 第一步吉萨做啥？ 第二步先干吗 做第三件事请 关于文字加粗倾斜的问题格式： **加粗内容**，*倾斜内容*，***倾斜加粗内容*** 关于转义字符 在正常段落中要原样输出以上字符`*_{}#+-.!通常都要在它们前面加上\ 你是谁？你子啊的撒旦拉萨解放路口设计 撒大苏打撒旦撒范德萨讽德诵功返回* 引用块的使用 引用的效果就如本文档中代码和样式示例。在每行行首加‘&gt;’ （同样也可以通过双空格+回车实现多行效果） 这是一则引用每行行尾没有双空格所以会显示为一行引 这也是一则引用但是它是通过双空格加回车实现 的 下面是二级引用的例子效果如下 加入两个&gt;&gt;符号 就成了(三级引用) 回到一级引用 进入二级引用 进入三级引用 2.如果在&gt;符号后头加入过多的空格那么引用当中就会出现代码块 &gt; public stataic void main(String[]args){ &gt; int a = 1; &gt; int b = 4; &gt; System.out.println(a*b); &gt; } 行内代码和代码段落 行内代码(直接使用``) 这里插入一段代码public void static void main(String[]args){...}另外一段代码String s = &#39;菜菜才&#39;; 代码块 直接往上写 但是教程上是用``` ```括起来的 public class TextCookieAsSession extends HttpServlet { public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { request.setCharacterEncoding(&quot;utf-8&quot;); response.setContentType(&quot;text/html;charset=utf-8&quot;); PrintWriter out = response.getWriter(); Cookie c = new Cookie(&quot;count&quot;, &quot;1&quot;); c.setMaxAge(60*24); response.addCookie(c); Cookie[] c1 = request.getCookies(); for (Cookie c2 : c1) { if (c2.getName().equals(&quot;count&quot;)) { out.println(&quot;你访问的次数为&quot;+c2.getValue()); Cookie c3 = new Cookie(&quot;count&quot;, &quot;&quot;+(Integer.parseInt(c2.getValue())+1)); response.addCookie(c3); } } } } 链接和图片上百度搜索呀 行内式链接：方括号中是链接问题，方括号后跟紧的的袁扩好内是地址（可以是网络地址或者主机的相对地址），网址后空一格双引号引起来的是title文字。title文字可以不写详见上头百度 表格 表格语法使用 | ：如果 |与其他非空白符号之间最少空一个空格。 表格由行列组成。 不同行之间用Enter分隔（不需要双空格）。 同行之间分隔不同列使用 | 。行首和行尾也可以使用 | 。 同一张表格，各行的列数（单元格数）应该相同。 一个表格的源代码第一行是表头。但填写规则和普通单元格一样。 一个表格源代码第二行不会渲染成一行单元格。它被用来分隔表头和普通单元格。这一行每一个单元格都填写大于等于三个-。 在第二行的单元格还可以控制本列的对其方式。在一串-左侧加:可以左对齐。右侧加右对齐。双侧加居中。 7. 例如(好像没出效果) | left-align | center-align | right-align | | :--- | :---: | ---: | | git status | git status | git status | 8. 还是得使用html标签呀 &lt;table&gt;&lt;tr&gt;&lt;th&gt;Tables&lt;/th&gt;&lt;th&gt;Are&lt;/th&gt;&lt;th&gt;Cool&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;col 1 is&lt;/td&gt;&lt;td&gt;left-aligned&lt;/td&gt;&lt;td&gt;$1600&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;col 2 is&lt;/td&gt;&lt;td&gt;centered&lt;/td&gt;&lt;td&gt;$12&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;col 3 is&lt;/td&gt;&lt;td&gt;right-aligned&lt;/td&gt;&lt;td&gt;$1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[我的博客]]></title>
+    <url>%2F2019%2F06%2F01%2F%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[第一次写博客坑坑坑 个人邮箱1374340498@qq.com]]></content>
+  </entry>
+</search>
