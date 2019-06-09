@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="导航,分享,">
 
 
 
@@ -79,13 +79,30 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="黑人Zac的博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="什么是servlet? 是sun公司制定的一种用来拓展web服务器功能 的 组件规范。    拓展web服务器功能的含义  web服务器只能处理静态的资源请求（即需要事先将html文件准备好),可以使用servlet来扩展（即web服务器可以通过servlet来处理动态资源的请求，比如访问数据库）。   组件规范的含义  什么是组件？    符合一定规范，实现部分功能的，并且需要部署到响应的容器中">
+<meta name="keywords" content="导航,分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sevlet概念">
+<meta property="og:url" content="http://yoursite.com/2019/06/09/Servlet&Jsp/index.html">
 <meta property="og:site_name" content="黑人Zac的博客">
+<meta property="og:description" content="什么是servlet? 是sun公司制定的一种用来拓展web服务器功能 的 组件规范。    拓展web服务器功能的含义  web服务器只能处理静态的资源请求（即需要事先将html文件准备好),可以使用servlet来扩展（即web服务器可以通过servlet来处理动态资源的请求，比如访问数据库）。   组件规范的含义  什么是组件？    符合一定规范，实现部分功能的，并且需要部署到响应的容器中">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VrhKjx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VrXFDH.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VrXlrQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VrX2RK.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsS1Nd.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VspQMV.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/Vsi4pj.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VskQMR.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VskNJe.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsFLrt.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsmEZR.png">
+<meta property="og:updated_time" content="2019-06-09T09:32:57.310Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="黑人Zac的博客">
+<meta name="twitter:title" content="sevlet概念">
+<meta name="twitter:description" content="什么是servlet? 是sun公司制定的一种用来拓展web服务器功能 的 组件规范。    拓展web服务器功能的含义  web服务器只能处理静态的资源请求（即需要事先将html文件准备好),可以使用servlet来扩展（即web服务器可以通过servlet来处理动态资源的请求，比如访问数据库）。   组件规范的含义  什么是组件？    符合一定规范，实现部分功能的，并且需要部署到响应的容器中">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/06/09/VrhKjx.png">
 
 
 
@@ -115,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/09/Servlet&Jsp/">
 
 
 
 
 
-  <title>归档 | 黑人Zac的博客</title>
+  <title>sevlet概念 | 黑人Zac的博客</title>
   
 
 
@@ -140,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/ZacWongalive" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -267,142 +284,512 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/09/Servlet&Jsp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chaor">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headimg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黑人Zac的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">sevlet概念</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-09T13:18:38+08:00">
+                2019-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 3 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/09/Servlet&Jsp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/09/Servlet&Jsp/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/09/Servlet&Jsp/" itemprop="url">
-              
-                <span itemprop="name">sevlet概念</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量<i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-09T13:18:38+08:00" content="2019-06-09">
-          06-09
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/02/markdown语法/" itemprop="url">
-              
-                <span itemprop="name">markdown的使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-02T12:18:38+08:00" content="2019-06-02">
-          06-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/01/我的博客/" itemprop="url">
-              
-                <span itemprop="name">我的博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-01T22:58:12+08:00" content="2019-06-01">
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h3 id="什么是servlet"><a href="#什么是servlet" class="headerlink" title="什么是servlet?"></a>什么是servlet?</h3><ul>
+<li><p>是<strong>sun公司</strong>制定的一种用来<strong>拓展web服务器功能</strong> 的 <strong>组件规范</strong>。  </p>
+<ul>
+<li><p><strong>拓展web服务器功能</strong>的含义</p>
+<ul>
+<li>web服务器只能处理静态的资源请求（即需要事先将html文件准备好),可以使用servlet来扩展（即web服务器可以通过servlet来处理动态资源的请求，比如访问数据库）。<br><img src="https://s2.ax1x.com/2019/06/09/VrhKjx.png" alt="tu"></li>
+</ul>
+</li>
+<li><p><strong>组件规范</strong>的含义</p>
+</li>
+<li><p>什么是组件？  </p>
+<ul>
+<li>符合<strong>一定规范</strong>，实现部分功能的，并且<strong>需要部署到响应的容器</strong>中才能运行的软件模块（所以说servlet是一个组件，需要部署到相应的servlet容器里面才能运行） </li>
+</ul>
+</li>
+<li><p>什么是容器？ </p>
+<ul>
+<li>符合一定规范，提供组件的运行环境的程序（tomcat就是一个容器，提供了servlet的运行环境。基本上一个servlet容器就是一个微型服务器）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="如何写一个servlet呢？"><a href="#如何写一个servlet呢？" class="headerlink" title="如何写一个servlet呢？"></a>如何写一个servlet呢？</h3><ol>
+<li><p>写一个Java类 ，实现一个接口servlet 或者继承httpServlet抽象类(通常采用第一种)</p>
+</li>
+<li><p>编译</p>
+</li>
+<li><p>打包（变成组件）<br> 创建一个具有如下结构的文件夹：</p>
+<pre><code>appname(应用名)   dangdang
+
+    WEB-INF
+        classes(放编译后的class文件)
+        lib（可选的,放jar文件）
+        web.xml(部署描述文件)</code></pre></li>
+<li><p>部署  </p>
+<ul>
+<li>将第三步创建好的整个文件夹拷贝到servlet容器相应的位置<em>注：可以使用Jar命令将第三步创建好的文件夹压缩成一个“.war”为后缀的文件，然后拷贝</em></li>
+</ul>
+</li>
+<li><p>启动容器访问servlet</p>
+<ul>
+<li><a href="http://ip:port/appname/url-pattern*注意：url-pattern在web.xml文件中定义" target="_blank" rel="noopener">http://ip:port/appname/url-pattern*注意：url-pattern在web.xml文件中定义</a>*</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="servlet是如何运行的？"><a href="#servlet是如何运行的？" class="headerlink" title="servlet是如何运行的？"></a>servlet是如何运行的？</h3><p>当用户向浏览器地址栏输入<a href="http://ip:port/helloweb/sayHello?name=zs" target="_blank" rel="noopener">http://ip:port/helloweb/sayHello?name=zs</a>  </p>
+<ol>
+<li><p>浏览器使用ip：port（端口号）连接服务器   </p>
+</li>
+<li><p>浏览器将请求数据按照http协议打成一个数据包（请求数据包）发送给服务器<br>请求数据包的内容包含了请求资源路径(/helloweb/sayHello?name=zs)，另外，在请求数据包当中，还会包含浏览器自动生成的一些信息。  </p>
+</li>
+<li><p>服务器创建两个对象：请求对象（Request）和响应对象（Response）服务器解析请求数据包，将解析之后的数据存放到请求对象里面，方便servlet读取请求数据(因为servlet不用解析请求数据包，如果要解析，需要理解http协议)。请求对象是HttpServletRequest接口的一个实现。响应对象是HttpServletResponse接口的一个实现，响应对象由于存放servlet处理的结果。  </p>
+</li>
+<li><p>依据请求资源路径找到相应的servlet配置，通过反射创建servlet实例(容器只会创建一个实例)。然后调用其service()方法。在调用service()方法时，会将事先创建好的请求对象(request)和响应对象(response)作为参 数进行传递。在servlet内部，可以通过request获得请求数据，或者通过response设置响 应数据。  </p>
+</li>
+<li><p>服务器从response中获取数据，按照http协议打成一个数据包(响应数据包),发送给浏览器。    </p>
+</li>
+<li><p>浏览器会解析响应数据包，取出相应的数据，生成相应的界面。</p>
+</li>
+</ol>
+<hr>
+<p>##常见的问题 状态码(表示的是服务器处理请求的一种状态)</p>
+<ol>
+<li><p>404<br> 表示的就是服务器依据请求地址找不到相应的资源</p>
+<pre><code>产生的原因： 
+        1.没有部署该应用
+
+        2.在 web.xml文件中定义的&lt;servlet-name&gt;不一致
+
+        3.请求地址写错了
+            检查 http://ip:port/appname/url-pattern</code></pre></li>
+<li><p>500<br> 含义：系统出错</p>
+<pre><code>产生原因：通常是程序在运行中出错
+
+    1.java类书写问题
+
+    2.&lt;servlet-class&gt;写错了 
+
+    3.代码写的不够严谨，比如对请求参数没有做检查就做一些转化        
+
+    什么是请求参数？
+
+            在浏览器上输入：http://localhost:8080/webday01/hello?qty=100
+
+                    qty:请求参数名
+                    100:请求参数值</code></pre></li>
+<li><p>405</p>
+<pre><code>含义：找不到处理方法
+
+原因：service方法定义错误        </code></pre></li>
+</ol>
+<hr>
+<p>###http协议</p>
+<ol>
+<li><p>什么是http协议？<br>是由w3c制定的一种网络应用层协议，规定了浏览器与<br>web服务器之间如何通信以及相应的数据包的格式。</p>
+</li>
+<li><p>如何通信的     </p>
+<pre><code>1.建立连接
+2.发送请求
+3.发送响应
+4.关闭连接 </code></pre></li>
+</ol>
+<p><em>特点：一次请求，一次连接</em> <strong>*这样做的优点是：服务器可以利用有限的连接为尽可能多的请求服务</strong><br>    - 数据包的结构 </p>
+<pre><code>        请求数据包
+            请求行（请求方式 请求资源路径 协议类型和版本）
+            消息头（是一些键值对 使用“：”隔开），表示特定的含义
+            实体内容 只有当请求方式为post时，实体内容才会有数据
+
+        响应数据包    
+            状态行 （协议类型和版本 状态码 状态描述）
+                200 正确
+                500 系统出错
+                404 找不到对应的资源
+            消息头  （键值对 比如：content-type 告诉浏览器，服务器返回的数据类型）
+
+            实体内容
+                程序的处理结果，浏览器会解析其中的数据，生成相应的页面
+
+- 两种请求方式 
+
+        get:
+            1.哪些情况下会使用到get请求
+                直接输入某个地址
+                点击链接
+                表单默认提交数据的方式
+
+            2.特点：将请求参数放在请求资源路径的后面，只能提交少量的数据，会泄露信息不安全
+                    比如路由器就会记录了包含了请求参数的请求地址
+
+        post:
+            1.哪些情况下会使用到post请求？
+                设置表单的属性
+
+            2.特点：
+                1.会将请求参数添加到尸体内容里，可以提交大量的数据
+                2.不会讲请求参数显示在浏览器地址栏，相对安全
+                        注意：不会将请求参数加密</code></pre><hr>
+<p>###编码问题</p>
+<ol>
+<li><p>服务器端返回的数据的编码问题<br> <code>response.setContentType(&quot;text/html;charset=utf-8&quot;);</code><br> out.println()方法在默认情况下会采用”iso..”来编码</p>
+</li>
+<li><p>表单含有中文参数值</p>
+<ul>
+<li><p>表单提交为什么有乱码？<br>  表单提交时，浏览器会对表单中的中文参数值进行编码<br>  会按照打开该表单所在的页面时的字符集来编码<br>  而服务器端默认情况下会使用“iso-8859-1”来解码</p>
+</li>
+<li><p>如何解决？</p>
+<ol>
+<li>1.在html文件里面加上 <pre><code>&lt;meta  http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot; &gt;&lt;meta charset=&quot;utf-8&quot;&gt;</code></pre><img src="https://s2.ax1x.com/2019/06/09/VrXFDH.png" alt="s1"><br><img src="https://s2.ax1x.com/2019/06/09/VrXlrQ.png" alt="s2">                                            </li>
+<li>服务端使用对应的字符集来解码request.setCharacterEncoding(“utf-8”); //必须保证表单是post请求<br><img src="https://s2.ax1x.com/2019/06/09/VrX2RK.png" alt="s3"></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="使用jdbc访问数据库"><a href="#使用jdbc访问数据库" class="headerlink" title="使用jdbc访问数据库"></a>使用jdbc访问数据库</h3><ol>
+<li><p>需要将jbdc驱动（jar文件）拷贝到web-inf\lib下</p>
+</li>
+<li><p>使用jdbc提供的一套api来访问数据库    </p>
+</li>
+</ol>
+<hr>
+<h3 id="重定向的使用"><a href="#重定向的使用" class="headerlink" title="重定向的使用"></a>重定向的使用</h3><ul>
+<li><p>含义：服务器通知浏览器向一个新的地址发送请求*注：</p>
+<pre><code>服务器向浏览器发送一个302状态码和一个location消息头
+    （该消息头包含了一个地址，称之为重定向地址），浏览器
+        收到之后立即向地址发送请求。*</code></pre></li>
+<li><p>如何重定向？</p>
+<ul>
+<li><code>response.sedRedirect(String url);</code><em>注：url就是重定向地址。重定向之前，容器会清空response对象中保存的数据（out.println()//表示的就是将数据加载到response对象中）2.当重定向代码放置在service方法中 ，服务器会先执行完整个service方法（包括重定向代码后面的代码）然后才会向浏览器发送状态码和 location消息头</em></li>
+</ul>
+</li>
+<li><p>重定向的特点：</p>
+<ul>
+<li>冲顶向的url是任意的</li>
+<li>重定向之后，浏览器地址栏的地址会变</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="servlet组成及其mvc的覆盖"><a href="#servlet组成及其mvc的覆盖" class="headerlink" title="servlet组成及其mvc的覆盖"></a>servlet组成及其mvc的覆盖</h3><ul>
+<li><img src="https://s2.ax1x.com/2019/06/09/VsS1Nd.png" alt="s"></li>
+</ul>
+<hr>
+<h3 id="关于mysql的中文支持问题"><a href="#关于mysql的中文支持问题" class="headerlink" title="关于mysql的中文支持问题"></a>关于mysql的中文支持问题</h3><ul>
+<li><p>mysql的某些驱动，默认会使用iso08859来编码，java用的是unicode来编码的，对于有中文就会出现问题解决办法看下图  </p>
+</li>
+<li><p><img src="https://s2.ax1x.com/2019/06/09/VspQMV.png" alt="tupian"></p>
+</li>
+</ul>
+<hr>
+<h3 id="servlet的生命周期"><a href="#servlet的生命周期" class="headerlink" title="servlet的生命周期"></a>servlet的生命周期</h3><ul>
+<li><p>什么是servlet的周期？  </p>
+<pre><code>容器如何去创建servlet对象，如何对其进行初始化处理，如何
+调用其方法来处理请求，以及如何销毁该对象的整个过程。</code></pre></li>
+<li><p>它分几个阶段？</p>
+<ol>
+<li><p>实例化</p>
+<ul>
+<li><p>什么是实例化？</p>
+<ul>
+<li>容器通过一个线程调用servlet的构造器，创建相应的对象</li>
+</ul>
+</li>
+<li><p>什么时候实例化？</p>
+<ul>
+<li>情况一.容器收到请求之后</li>
+<li>情况二.容器启动后立即创建  <pre><code>*只需要在web.xml文件中加上一个&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;（这个标签里面的参数值要求是一个大于等于0的整数这个整数越小，优先级就越高。（即先创建）*</code></pre></li>
+</ul>
+</li>
+<li><p>注：容器只会创建一个实例 </p>
+</li>
+</ul>
+</li>
+<li><p>初始化</p>
+<ul>
+<li><p>什么是初始化？   </p>
+<ul>
+<li>容器调用servlet对象的init方法，该方法只会执行一次，作用：给servlet分配资源（分配一个ServletConfig对象）        </li>
+</ul>
+</li>
+<li><p>关于ServletConfig对象的问题  </p>
+<ul>
+<li>它是当自定义Java类继承了httpservlet，实现过程：将容器传递过来的servletconfig对象保存下来并且提供了一个获取该对象的方法（getServletConfig()）<em>servletconfig对象的作用 我们可以通过它来访问初始化参数</em></li>
+</ul>
+</li>
+<li><p>如何实现自己的初始化处理逻辑？</p>
+<ul>
+<li>只需要覆盖 genericserlevt提供的init()方法</li>
+</ul>
+</li>
+<li><p>初始化参数  </p>
+<pre><code>1.配置； &lt;init-param&gt;
+            &lt;param-name&gt;company&lt;/param-name&gt;
+            &lt;param-value&gt;zacwong&lt;/param-value&gt;
+        &lt;/init-param&gt;
+
+2.读取： String ServletConfig.getInitParameter(string s )方法</code></pre></li>
+</ul>
+</li>
+<li><p>就绪</p>
+<ol>
+<li>什么是就绪？  <ul>
+<li>容器调用servlet的service方法来处理请求</li>
+</ul>
+</li>
+<li>HttpServlet的service方法是如何实现的？  <ul>
+<li>依据请求类型（get/post）调用相应的doXXX方法（doGet()/doPost()）<em>注：既然这样，我们在写servlet的时候，继承httpservlet然后可以直接覆盖service方法 或者覆盖doGet()和doPost()方法详细见下图</em></li>
+<li><img src="https://s2.ax1x.com/2019/06/09/Vsi4pj.md.png" alt="s">    </li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>销毁</p>
+<ol>
+<li>什么是销毁？<ul>
+<li>容器在删除servlet对象之前，会先调用该对象的destroy方法。<br>  该方法只会执行一次。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>相关的几个类和接口  </p>
+<ol>
+<li>Servlet接口<ul>
+<li>init()</li>
+<li>service()</li>
+<li>destroy()</li>
+</ul>
+</li>
+<li>GenericServlet抽象类<ul>
+<li>实现了servlet接口</li>
+<li>实现了Servlet接口中的部分方法（init，destroy）</li>
+</ul>
+</li>
+<li>HttpServlet抽象类 <ul>
+<li>继承了GenericServlet抽象类,实现了service方法     </li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>servlet测试的相关图片</p>
+<ul>
+<li><p>servlet类的示例<img src="https://s2.ax1x.com/2019/06/09/VskQMR.md.png" alt="33">  </p>
+</li>
+<li><p>servlet类所对应的web.xml配置<img src="https://s2.ax1x.com/2019/06/09/VskNJe.png" alt="22"></p>
+</li>
+<li><p>服务器对请求的处理<img src="https://s2.ax1x.com/2019/06/09/VsFLrt.md.png" alt="11"> </p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="容器如何处理请求资源路径"><a href="#容器如何处理请求资源路径" class="headerlink" title="容器如何处理请求资源路径"></a>容器如何处理请求资源路径</h3><p> 比如，在浏览器输入<em><a href="HTTP://IP:PORT/WEB01-02/ABC.HTML" target="_blank" rel="noopener">HTTP://IP:PORT/WEB01-02/ABC.HTML</a></em>  </p>
+<ol>
+<li><p>容器依据应用名（“/web01-2”）找到应用所在的文件夹  </p>
+</li>
+<li><p>容器默认认为调用的是一个servlet，他会去web.xml中查找有</p>
+<pre><code>没有一个和&quot;/abc.html&quot;匹配的servlet</code></pre><ul>
+<li><p>关于容器匹配的问题</p>
+<ul>
+<li><p>精确匹配</p>
+<ul>
+<li><url-parttern>/abc.html</url-parttern></li>
+</ul>
+</li>
+<li><p>通配匹配</p>
+<ul>
+<li><url-parttern>/*</url-parttern></li>
+</ul>
+<p>  <em>也就是 容器会默认处理浏览器发来的任何资源请求路径</em></p>
+</li>
+<li><p>后缀匹配<br>  -使用“<em>.”开头，后接多个字符，比如<br>  <url-parttern></url-parttern></em>.java也就是 容器会处理浏览器发来资源请求路径中含有.java的路径</p>
+<ul>
+<li>合并多个servlet<img src="https://s2.ax1x.com/2019/06/09/VsmEZR.png" alt="45"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h3>
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/导航/" rel="tag"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> 导航</a>
+          
+            <a href="/tags/分享/" rel="tag"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> 分享</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/02/markdown语法/" rel="next" title="markdown的使用">
+                <i class="fa fa-chevron-left"></i> markdown的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -410,6 +797,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -430,8 +824,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -527,6 +930,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是servlet"><span class="nav-number">1.</span> <span class="nav-text">什么是servlet?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何写一个servlet呢？"><span class="nav-number">2.</span> <span class="nav-text">如何写一个servlet呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet是如何运行的？"><span class="nav-number">3.</span> <span class="nav-text">servlet是如何运行的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用jdbc访问数据库"><span class="nav-number">4.</span> <span class="nav-text">使用jdbc访问数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向的使用"><span class="nav-number">5.</span> <span class="nav-text">重定向的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet组成及其mvc的覆盖"><span class="nav-number">6.</span> <span class="nav-text">servlet组成及其mvc的覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于mysql的中文支持问题"><span class="nav-number">7.</span> <span class="nav-text">关于mysql的中文支持问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet的生命周期"><span class="nav-number">8.</span> <span class="nav-text">servlet的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器如何处理请求资源路径"><span class="nav-number">9.</span> <span class="nav-text">容器如何处理请求资源路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP"><span class="nav-number">10.</span> <span class="nav-text">JSP</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -696,6 +1115,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
