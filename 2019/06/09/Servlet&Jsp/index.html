@@ -98,7 +98,12 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VskNJe.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsFLrt.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsmEZR.png">
-<meta property="og:updated_time" content="2019-06-09T09:46:11.196Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/Vsgd91.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsH25V.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsHIKJ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsqGkt.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/09/Vsq21U.png">
+<meta property="og:updated_time" content="2019-06-09T15:51:53.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sevlet概念">
 <meta name="twitter:description" content="什么是servlet? 是sun公司制定的一种用来拓展web服务器功能 的 组件规范。    拓展web服务器功能的含义  web服务器只能处理静态的资源请求（即需要事先将html文件准备好),可以使用servlet来扩展（即web服务器可以通过servlet来处理动态资源的请求，比如访问数据库）。   组件规范的含义  什么是组件？    符合一定规范，实现部分功能的，并且需要部署到响应的容器中">
@@ -466,8 +471,7 @@
 </li>
 </ol>
 <hr>
-<p>##常见的问题 状态码(表示的是服务器处理请求的一种状态)</p>
-<ol>
+<h3 id="常见的问题-状态码-表示的是服务器处理请求的一种状态"><a href="#常见的问题-状态码-表示的是服务器处理请求的一种状态" class="headerlink" title="常见的问题 状态码(表示的是服务器处理请求的一种状态)"></a>常见的问题 状态码(表示的是服务器处理请求的一种状态)</h3><ol>
 <li><p>404<br> 表示的就是服务器依据请求地址找不到相应的资源</p>
 <pre><code>产生的原因： 
         1.没有部署该应用
@@ -728,7 +732,193 @@
 </li>
 </ol>
 <hr>
-<h3 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h3>
+<h3 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h3><h4 id="什么是jsp"><a href="#什么是jsp" class="headerlink" title="什么是jsp?"></a>什么是jsp?</h4><ul>
+<li>是sun公司制定的一种服务器端动态页面技术规范。<pre><code>JSP其实是一个“.jsp“为后缀的文件，该文件的内容主要是
+HTML和少量的java代码，容器会将JSP文件自动转化成一个servlet
+然后执行。</code></pre></li>
+</ul>
+<hr>
+<h4 id="怎么创建一个jsp文件？"><a href="#怎么创建一个jsp文件？" class="headerlink" title="怎么创建一个jsp文件？"></a>怎么创建一个jsp文件？</h4><ul>
+<li><p>创建一个以’.jsp’为后缀的文件</p>
+</li>
+<li><p>在文件里面添加如下内容：</p>
+<ul>
+<li><p>html(css,js):直接写</p>
+</li>
+<li><p>Java代码：</p>
+<ul>
+<li>Java代码片段<br> 格式：&lt;% java语句;%&gt;</li>
+<li>jsp表达式 格式： &lt;%= java表达式 %&gt;</li>
+<li>jsp声明     &lt;%!  声明一个变量或者一个方法%&gt; （声明的变量或者方法是在jsp转化成servlet类中）</li>
+</ul>
+</li>
+<li><h5 id="隐藏对象"><a href="#隐藏对象" class="headerlink" title="隐藏对象"></a>隐藏对象</h5><ul>
+<li><p>什么是隐藏对象？</p>
+<ul>
+<li><p>在jsp文件里面，可以直接使用的对象，如out,request,response,session,application,exception<br>(注意：session对象的使用详见下图)<img src="https://s2.ax1x.com/2019/06/09/Vsgd91.png" alt="98"></p>
+</li>
+<li><p>page对象（jsp示例本身，就是servlet对象，用的很少）</p>
+</li>
+<li><p>pageContext对象(页面上下文)</p>
+<ul>
+<li>容器会为每一个jsp实例创建一个唯一的符合PageContext接口要求的对象<em>（它跟ServletContext一样具有唯一性和持久性）</em></li>
+<li>作用：<ul>
+<li>1.绑定数据<ul>
+<li>setAttribute getAttribute removeAtrribute</li>
+</ul>
+  <em>注：绑定到pageContext上的数据只有对应的jsp实例能访问 详细看WebText09-2 a5.jsp a6.jsp</em></li>
+<li>2.获得其他的隐藏对象<pre><code>*我们可以通过一个java类获取jsp当中的其他隐藏对象*</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>config  就是servletConfig</p>
+<ul>
+<li><p>通过config读取jsp实例初始化参数配置web.xml 详细看 p24 00:30:06 WebText09-2 a7.jsp</p>
+<pre><code>&lt;servlet&gt;
+    &lt;servlet-name&gt;jsp&lt;/servlet-name&gt;
+    &lt;jsp-file&gt;/a7.jsp&lt;/jsp-file&gt;  //注意这里的格式
+
+    &lt;init-param&gt;
+        &lt;param-name&gt;company&lt;/param-name&gt;
+        &lt;param-value&gt;zac&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;jsp&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/abc.html&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+这里当我们在访问地址下访问abc.html的时候 服务器就会返回
+a7.jsp文件</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>#####指令</p>
+<ul>
+<li><p>什么是指令？</p>
+<ul>
+<li>通知容器，在将Jsp文件转化成servlet类时做出一些额外的处理，比如导包</li>
+</ul>
+</li>
+<li><p>指令的语法</p>
+<ul>
+<li>&lt;%@指令名称 属性=属性值%&gt;</li>
+</ul>
+</li>
+<li><p>常见的一些指令</p>
+<ul>
+<li><p>page指令</p>
+<ul>
+<li>import属性：导包用的 比如<code>&lt;%@page import=&quot;java.util.*&quot;&gt;</code></li>
+<li>中文处理  <code>contentType=&quot;text/html; charset=utf-8&quot;
+pageEncoding=&quot;utf-8&quot;</code></li>
+</ul>
+</li>
+<li><p>include指令<br>告诉容器，在jsp文件转换成servlet类时，将file属性指定的文件的内容插入到该指令所在的位置》比如：<code>&lt;%@include file=&quot;header.jsp&quot;%&gt;</code></p>
+</li>
+<li><p>taglib指令</p>
+<ul>
+<li>用来引入jsp标签</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- ##### jsp是如何执行的？
+    1. 容器会将jsp文件转换成一个servlet类
+                HTML（css,js） ----&gt;  service方法使用out.write()输出  
+                java代码片段 --&gt;  service方法里，照搬  
+                jsp表达式---&gt; serivce方法里，使用 out.print(java表达式)输出  
+                jsp声明    --&gt;给servlet增加新的属性或者方法
+    2. 容器调用servlet.     </code></pre><hr>
+<h4 id="处理servlet运行时产生的异常"><a href="#处理servlet运行时产生的异常" class="headerlink" title="处理servlet运行时产生的异常"></a>处理servlet运行时产生的异常</h4><ol>
+<li><p>编程式处理          </p>
+<ol>
+<li>捕获异常</li>
+<li>转发信息到错误页面</li>
+<li>图示如下<img src="https://s2.ax1x.com/2019/06/09/VsH25V.png" alt="999"><img src="https://s2.ax1x.com/2019/06/09/VsHIKJ.png" alt="998"></li>
+</ol>
+</li>
+<li><p>声明式处理（即交给容器处理）<em>系统异常就用它，但是它不灵活</em></p>
+<ol>
+<li><p>捕获异常</p>
+</li>
+<li><p>配置异常处理页面    </p>
+</li>
+<li><pre><code>&lt;error-page&gt;  
+        &lt;exception-type&gt;javax.servlet.ServletException&lt;/exception-type&gt;
+        &lt; location &gt;/error2.jsp&lt; /location &gt;
+&lt;/error-page&gt;</code></pre></li>
+<li><p>写好error2.jsp</p>
+</li>
+<li><p>图示如下<img src="https://s2.ax1x.com/2019/06/09/VsqGkt.png" alt="456"><img src="https://s2.ax1x.com/2019/06/09/Vsq21U.png" alt="455"></p>
+</li>
+<li><p><strong>声明式异常常常用来处理系统异常（异常发生之后不能恢复，比如数据库停止），发生这类一场后，提醒用户稍后重试即可编程式异常（转发的方式）更灵活，可以处理应用异常(比如，用户输入错误的密码)；</strong></p>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h3><ol>
+<li><p>定义：一个组件（servlet/jsp）将未完成的处理交给另外一个web组件继续做。<em>比如，一个servlet将处理结果(调用了dao)转发给一个jsp来实现(展示)</em></p>
+</li>
+<li><p>如何转发？</p>
+<ol>
+<li><p>绑定数据到request上<br> <code>request.setAttribute(String name,Object obj)</code><em>注：依据绑定名获得绑定值 <code>Object request.getAttribute(String name);</code></em></p>
+</li>
+<li><p>获得转发器<br> <code>RequestDispatcher rd =request.getReqiestDispatcher(String url);</code></p>
+</li>
+<li><p>转发</p>
+<ol>
+<li>rd.forward(request,response);</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>转发的特点</p>
+<ol>
+<li>转发之后，浏览器地址访问servlet的地址栏的地址不变</li>
+<li>转发地址有限制(必须是在同一个应用)</li>
+</ol>
+</li>
+<li><p>转发的注意事项</p>
+<ol>
+<li>转发之前，不能执行out.close 和out.flush方法</li>
+<li>转发之前，会将response当中缓存的数据清空</li>
+<li>如果转发和重定向代码后头都有代码那么 <strong>重定向：会继续先执行后面的代码  转发：会先执行转发的页面的代码，再回来执行后面的代码</strong>        </li>
+<li><strong>无论是 request.getRequestDispatcher(path).forward(request, response)还是response.sendRedirect,程序都会在执行完该句的情况下继续向下执行,因此在必要的时候应该使用return终止该方法.</strong>    </li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="区分重定向和转发"><a href="#区分重定向和转发" class="headerlink" title="区分重定向和转发"></a>区分重定向和转发</h3><ul>
+<li>转发所涉及的各个web组件可以共享同一个request对象，重定向不可以<em>注： 容器收到请求后，会创建request对象和response对象，当响应发送完毕，容器会删除响应（response）和请求(request)对象.所以说重定向是两次请求 ，转发的话是一次请求</em></li>
+<li>重定向之后，浏览器的地址栏会变，转发不会变。</li>
+<li>重定向的地址是任意的，转发的地址必须是同一个应用下</li>
+<li>转发是一件事没完成，重定向是一件事情已经做完  </li>
+</ul>
+<hr>
+<h3 id="关于路径的相关问题"><a href="#关于路径的相关问题" class="headerlink" title="关于路径的相关问题"></a>关于路径的相关问题</h3><ul>
+<li>涉及到的内容有：链接地址，表单提交地址，重定向，转发</li>
+<li>如果填写下列路径  <pre><code>&gt; &lt; a href=&quot;&quot;&gt;&lt;/a &gt; 
+&gt;  &lt; form action=&quot;&quot;&gt;
+&gt;  response.sendRedirect(&quot;&quot;)
+&gt;  request.getRequestDispatcher(&quot;&quot;)</code></pre></li>
+<li>绝对路径 <em>以”/“开头的路径</em></li>
+<li>相对路径 <em>不以”/“开头的路径</em></li>
+<li>如何写绝对路径？<ul>
+<li><strong>链接地址，表单提交地址，重定向，从应用名开始写</strong>  <strong>转发从应用名之后开始写</strong></li>
+</ul>
+</li>
+</ul>
+
       
     </div>
     
@@ -939,7 +1129,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是servlet"><span class="nav-number">1.</span> <span class="nav-text">什么是servlet?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何写一个servlet呢？"><span class="nav-number">2.</span> <span class="nav-text">如何写一个servlet呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet是如何运行的？"><span class="nav-number">3.</span> <span class="nav-text">servlet是如何运行的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码问题"><span class="nav-number">4.</span> <span class="nav-text">编码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用jdbc访问数据库"><span class="nav-number">5.</span> <span class="nav-text">使用jdbc访问数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向的使用"><span class="nav-number">6.</span> <span class="nav-text">重定向的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet组成及其mvc的覆盖"><span class="nav-number">7.</span> <span class="nav-text">servlet组成及其mvc的覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于mysql的中文支持问题"><span class="nav-number">8.</span> <span class="nav-text">关于mysql的中文支持问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet的生命周期"><span class="nav-number">9.</span> <span class="nav-text">servlet的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器如何处理请求资源路径"><span class="nav-number">10.</span> <span class="nav-text">容器如何处理请求资源路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP"><span class="nav-number">11.</span> <span class="nav-text">JSP</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是servlet"><span class="nav-number">1.</span> <span class="nav-text">什么是servlet?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何写一个servlet呢？"><span class="nav-number">2.</span> <span class="nav-text">如何写一个servlet呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet是如何运行的？"><span class="nav-number">3.</span> <span class="nav-text">servlet是如何运行的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的问题-状态码-表示的是服务器处理请求的一种状态"><span class="nav-number">4.</span> <span class="nav-text">常见的问题 状态码(表示的是服务器处理请求的一种状态)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码问题"><span class="nav-number">5.</span> <span class="nav-text">编码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用jdbc访问数据库"><span class="nav-number">6.</span> <span class="nav-text">使用jdbc访问数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向的使用"><span class="nav-number">7.</span> <span class="nav-text">重定向的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet组成及其mvc的覆盖"><span class="nav-number">8.</span> <span class="nav-text">servlet组成及其mvc的覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于mysql的中文支持问题"><span class="nav-number">9.</span> <span class="nav-text">关于mysql的中文支持问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet的生命周期"><span class="nav-number">10.</span> <span class="nav-text">servlet的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器如何处理请求资源路径"><span class="nav-number">11.</span> <span class="nav-text">容器如何处理请求资源路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP"><span class="nav-number">12.</span> <span class="nav-text">JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是jsp"><span class="nav-number">12.1.</span> <span class="nav-text">什么是jsp?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么创建一个jsp文件？"><span class="nav-number">12.2.</span> <span class="nav-text">怎么创建一个jsp文件？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隐藏对象"><span class="nav-number">12.2.1.</span> <span class="nav-text">隐藏对象</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理servlet运行时产生的异常"><span class="nav-number">12.3.</span> <span class="nav-text">处理servlet运行时产生的异常</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转发"><span class="nav-number">13.</span> <span class="nav-text">转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区分重定向和转发"><span class="nav-number">14.</span> <span class="nav-text">区分重定向和转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于路径的相关问题"><span class="nav-number">15.</span> <span class="nav-text">关于路径的相关问题</span></a></li></ol></div>
             
 
           </div>
