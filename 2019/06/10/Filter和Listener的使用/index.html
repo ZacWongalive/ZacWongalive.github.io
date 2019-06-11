@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -88,8 +95,11 @@
 <meta property="og:description" content="Filter 什么是过滤器？ servlet规范当中定义的一种特殊的组件，用来拦截容器的调用过程。容器收到请求之后，通常情况下会调用servlet的service方法来处理请求。如果没有过滤器，则容器会先调用过滤器的方法    如何写一个过滤器？ 写一个Java类，实现filter类  public class commentFilterA implements Filter {}  在doFil">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/11/VcSneK.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/12/V2lyGQ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/11/VcSQFe.png">
-<meta property="og:updated_time" content="2019-06-10T16:47:31.533Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/12/V21Kzj.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/12/V21GwV.png">
+<meta property="og:updated_time" content="2019-06-11T17:34:18.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filter和Listener的使用">
 <meta name="twitter:description" content="Filter 什么是过滤器？ servlet规范当中定义的一种特殊的组件，用来拦截容器的调用过程。容器收到请求之后，通常情况下会调用servlet的service方法来处理请求。如果没有过滤器，则容器会先调用过滤器的方法    如何写一个过滤器？ 写一个Java类，实现filter类  public class commentFilterA implements Filter {}  在doFil">
@@ -265,7 +275,6 @@
 </nav>
 
 
-
  </div>
     </header>
 
@@ -409,7 +418,7 @@
 <pre><code>FilterChain arg2) throws IOException, ServletException {}</code></pre></blockquote>
 <p>配置过滤器（web.xml）让容器知道哪些请求需要拦截</p>
 <blockquote>
-<p><img src="https://s2.ax1x.com/2019/06/11/VcSneK.png" alt="45"></p>
+<p><img src="https://s2.ax1x.com/2019/06/11/VcSneK.png" alt="45"><br><img src="https://s2.ax1x.com/2019/06/12/V2lyGQ.png" alt="46"></p>
 </blockquote>
 </blockquote>
 </li>
@@ -417,7 +426,134 @@
 <li>当有多个过滤器对同一个servlet进行过滤的时候(都满足过滤的条件)容器会依据<filter-mapping>的先后顺序来调用<br><img src="https://s2.ax1x.com/2019/06/11/VcSQFe.png" alt="12"></filter-mapping></li>
 </ul>
 </li>
-<li><h4 id="过滤器的初始化参数的使用"><a href="#过滤器的初始化参数的使用" class="headerlink" title="过滤器的初始化参数的使用"></a>过滤器的初始化参数的使用</h4></li>
+<li><h4 id="过滤器的初始化参数的使用"><a href="#过滤器的初始化参数的使用" class="headerlink" title="过滤器的初始化参数的使用"></a>过滤器的初始化参数的使用</h4><blockquote>
+<p>先在filter类中定义一个私有变量</p>
+<blockquote>
+<p><img src="https://s2.ax1x.com/2019/06/12/V21Kzj.png" alt="78"></p>
+</blockquote>
+<p>在filter类中的init()方法中给config赋值</p>
+<blockquote>
+<p><img src="https://s2.ax1x.com/2019/06/12/V21GwV.png" alt="99"></p>
+</blockquote>
+</blockquote>
+</li>
+<li><h4 id="过滤器的优点"><a href="#过滤器的优点" class="headerlink" title="过滤器的优点"></a>过滤器的优点</h4><blockquote>
+<p>1.在不修改源程序的基础上，为程序增加一些新的功能</p>
+<p>2.将多个组件相同的处理逻辑集卸载过滤器里面方便代码的维护</p>
+</blockquote>
+</li>
+<li><h4 id="过滤器的相关代码"><a href="#过滤器的相关代码" class="headerlink" title="过滤器的相关代码"></a>过滤器的相关代码</h4></li>
+</ol>
+<pre><code>package web;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/*
+ * 过滤器很类似于servlet
+ * 
+ * 都是通过先通过构造器实例化，然后再通过init()进行初始化
+ */
+public class commentFilterA implements Filter {
+private FilterConfig config;    
+/*
+ * 该类只要继承了Filter的话，当servlet被创建，该类就会被创建（类似于servlet当中添加了&lt;on-starup&gt;标签样的）
+ * 
+ */
+public commentFilterA(){}
+@Override
+public void destroy() {}
+/**
+ * 容器通过dofilter方法来处理请求  dofilter和servlet当中的service方法用的是同一个request,response对象
+ * 
+ * ServletRequest 和ServletResponse 是HttpServletRequest和HttpServletResponse的父类
+ * 但是他俩是个过时的接口 所以在方法里需要强转；  
+ * 
+ * filterChain(过滤器链)
+ *     如果调用了FilterChain的doFilter方法，则容器会继续往后调用。
+ */  
+
+public void doFilter(ServletRequest arg0, ServletResponse arg1,
+        FilterChain arg2) throws IOException, ServletException {
+        System.out.println(&quot;过滤器A的dofilter方法开始执行&quot;);
+    HttpServletRequest request = (HttpServletRequest)arg0;
+        HttpServletResponse response =(HttpServletResponse)arg1;
+        request.setCharacterEncoding(&quot;utf-8&quot;);
+        String s = request.getParameter(&quot;comment&quot;);
+
+        if (s.indexOf(config.getInitParameter(&quot;illegalStr&quot;))!=-1) {
+            //包含了敏感字
+            request.setAttribute(&quot;mingganzi&quot;, &quot;评论区出现了敏感字&quot;);
+            request.getRequestDispatcher    (&quot;sorry.jsp&quot;).forward(request,     response);
+        }else{
+
+            arg2.doFilter(arg0, arg1);
+        }
+        System.out.println(&quot;过滤器A的dofilter方法执行完成&quot;);
+
+
+}
+
+/**
+ *这里的参数filterconfig就类似于 servletconfig
+ *该方法只会执行一次
+ *
+ */
+public void init(FilterConfig arg0) throws ServletException {
+    //将容器传过来的filterconfig保存下来
+    config  = arg0;
+}
+
+}</code></pre><hr>
+<h3 id="Listener"><a href="#Listener" class="headerlink" title="Listener"></a>Listener</h3><ol>
+<li><h4 id="什么是监听器？-框架中用到"><a href="#什么是监听器？-框架中用到" class="headerlink" title="什么是监听器？(框架中用到)"></a>什么是监听器？(框架中用到)</h4><p> servlet规范当中定义的一种特殊的组件，用来监听容器(容器只能创建一次监听器)产生的事件</p>
+<blockquote>
+<p>容器产生的事件主要有两大类</p>
+<blockquote>
+<p>1)生命周期相关的事件<br>容器创建了或者销毁了request,session,ServletContext(servlet上下文)时产生的事件</p>
+</blockquote>
+<blockquote>
+<p>2) 绑定数据相关的事件 调用了request,session,servlet上下文的setAttribute,removeAtrribute时产生的事件</p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<hr>
+<h3 id="servlet上下文"><a href="#servlet上下文" class="headerlink" title="servlet上下文"></a>servlet上下文</h3><ol>
+<li><h4 id="什么是servlet上下文？"><a href="#什么是servlet上下文？" class="headerlink" title="什么是servlet上下文？"></a>什么是servlet上下文？</h4><ol>
+<li>容器启动东后，会为每个web应用创建唯一的一个符合servletContext接口要求的对象</li>
+<li>servlet上下文的又来<ol>
+<li>就是sun公司为了通过web应用调用servlet上下文对象来进一步调用了容器(tomcat)除了网络以外的其他服务（日志，安全，服务，权限）（但是这些服务都比较鸡肋，实际，不适用）</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h4 id="servlet上下文特点"><a href="#servlet上下文特点" class="headerlink" title="servlet上下文特点"></a>servlet上下文特点</h4><ol>
+<li>唯一性：一个web应用对应唯一的一个上下文。</li>
+<li>持久性：只要容器没有关闭，并且应用没有被删除，则上下文一直存在。 </li>
+</ol>
+</li>
+<li><h4 id="如何获取上下文？"><a href="#如何获取上下文？" class="headerlink" title="如何获取上下文？"></a>如何获取上下文？</h4><ol>
+<li>GnericServlet,ServletConfig,FilterConfig,HttpSession提供了一个getServletContext方法来获取上下文。</li>
+</ol>
+</li>
+<li><h4 id="上下文的作用："><a href="#上下文的作用：" class="headerlink" title="上下文的作用："></a>上下文的作用：</h4><ol>
+<li>（只要容器不关，任何servlet和filter数据就能访问那些绑定的数据）<strong>setAttribute(),getAttribute(),removeAtrribute(),将数据绑定到上下文，可以随时访问</strong><ol>
+<li>同样 request session 同样都可以绑定数据</li>
+<li>数据绑定的规则：在满足使用条件的情况下，优先使用生命周期短的（request&lt;session&lt;ServletContext上下文）</li>
+<li>request绑定的数据只能在同一个请求或转发所涉及的各个组件可以访问；session绑定的数据只有在同一个会话所涉及的组件可以访问；ServletContext上下文绑定的数据是同一个应用中的所有组件都可以访问的</li>
+</ol>
+</li>
+</ol>
+</li>
 </ol>
 
       
@@ -531,7 +667,7 @@
               <img class="site-author-image" itemprop="image" src="/images/headimg.jpg" alt="chaor">
             
               <p class="site-author-name" itemprop="name">chaor</p>
-              <p class="site-description motion-element" itemprop="description">爬墙中~</p>
+              <p class="site-description motion-element" itemprop="description">翻墙中~</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -630,7 +766,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Filter"><span class="nav-number">1.</span> <span class="nav-text">Filter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是过滤器？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是过滤器？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何写一个过滤器？"><span class="nav-number">1.2.</span> <span class="nav-text">如何写一个过滤器？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的优先级"><span class="nav-number">1.3.</span> <span class="nav-text">过滤器的优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的初始化参数的使用"><span class="nav-number">1.4.</span> <span class="nav-text">过滤器的初始化参数的使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Filter"><span class="nav-number">1.</span> <span class="nav-text">Filter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是过滤器？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是过滤器？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何写一个过滤器？"><span class="nav-number">1.2.</span> <span class="nav-text">如何写一个过滤器？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的优先级"><span class="nav-number">1.3.</span> <span class="nav-text">过滤器的优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的初始化参数的使用"><span class="nav-number">1.4.</span> <span class="nav-text">过滤器的初始化参数的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的优点"><span class="nav-number">1.5.</span> <span class="nav-text">过滤器的优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的相关代码"><span class="nav-number">1.6.</span> <span class="nav-text">过滤器的相关代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Listener"><span class="nav-number">2.</span> <span class="nav-text">Listener</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是监听器？-框架中用到"><span class="nav-number">2.1.</span> <span class="nav-text">什么是监听器？(框架中用到)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet上下文"><span class="nav-number">3.</span> <span class="nav-text">servlet上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是servlet上下文？"><span class="nav-number">3.1.</span> <span class="nav-text">什么是servlet上下文？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#servlet上下文特点"><span class="nav-number">3.2.</span> <span class="nav-text">servlet上下文特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何获取上下文？"><span class="nav-number">3.3.</span> <span class="nav-text">如何获取上下文？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上下文的作用："><span class="nav-number">3.4.</span> <span class="nav-text">上下文的作用：</span></a></li></ol></li></ol></div>
             
 
           </div>
