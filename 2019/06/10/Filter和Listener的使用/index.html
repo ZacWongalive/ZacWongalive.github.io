@@ -99,7 +99,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/11/VcSQFe.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/12/V21Kzj.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/12/V21GwV.png">
-<meta property="og:updated_time" content="2019-06-11T17:34:18.748Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/12/VRyyCQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/12/VRVRmD.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/12/VRhpwR.png">
+<meta property="og:updated_time" content="2019-06-12T09:45:15.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filter和Listener的使用">
 <meta name="twitter:description" content="Filter 什么是过滤器？ servlet规范当中定义的一种特殊的组件，用来拦截容器的调用过程。容器收到请求之后，通常情况下会调用servlet的service方法来处理请求。如果没有过滤器，则容器会先调用过滤器的方法    如何写一个过滤器？ 写一个Java类，实现filter类  public class commentFilterA implements Filter {}  在doFil">
@@ -526,6 +529,20 @@ public void init(FilterConfig arg0) throws ServletException {
 </blockquote>
 </li>
 </ol>
+<ol start="2">
+<li>如何去写一个监听器？<blockquote>
+<p>1.写一个java类，实现相应的监听器接口。</p>
+<blockquote>
+<p><code>比如，要监听session的创建和销毁，就要实现HttpSessionListener接口</code></p>
+</blockquote>
+<p>2.在接口方法当中实现监听处理逻辑</p>
+<p>3.配置web.xml文件</p>
+<blockquote>
+<p><img src="https://s2.ax1x.com/2019/06/12/VRyyCQ.png" alt="339">   </p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
 <hr>
 <h3 id="servlet上下文"><a href="#servlet上下文" class="headerlink" title="servlet上下文"></a>servlet上下文</h3><ol>
 <li><h4 id="什么是servlet上下文？"><a href="#什么是servlet上下文？" class="headerlink" title="什么是servlet上下文？"></a>什么是servlet上下文？</h4><ol>
@@ -550,6 +567,143 @@ public void init(FilterConfig arg0) throws ServletException {
 <li>同样 request session 同样都可以绑定数据</li>
 <li>数据绑定的规则：在满足使用条件的情况下，优先使用生命周期短的（request&lt;session&lt;ServletContext上下文）</li>
 <li>request绑定的数据只能在同一个请求或转发所涉及的各个组件可以访问；session绑定的数据只有在同一个会话所涉及的组件可以访问；ServletContext上下文绑定的数据是同一个应用中的所有组件都可以访问的</li>
+</ol>
+</li>
+<li>访问全局的初始化参数<blockquote>
+<p>1.在web.xml文件中配置键值对<br><context-param></context-param></p>
+<blockquote>
+<p><img src="https://s2.ax1x.com/2019/06/12/VRVRmD.png" alt="100"></p>
+</blockquote>
+<p>2.在servlet类当中获取servletContext然后通过方法<strong>getInitParameter(String name)</strong>获取全局初始化参数</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><h4 id="application的使用"><a href="#application的使用" class="headerlink" title="application的使用"></a>application的使用</h4><ol>
+<li>什么是application对象？<ol>
+<li>当web服务器启动时，web服务器会自动会创建一个application对象，application对象一旦创建，他就一直存在，知道web服务器关闭<blockquote>
+<p>注意 一个web服务器通常有多个web服务目录(网站)，当web服务器启动时，它自动为每个web服务目录都创建一个对应的application对象，这些对象各自独立，而且和web服务器目录一一对应</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>application对象的生命周期<ul>
+<li>从web服务器启动，知道web服务器关闭</li>
+</ul>
+</li>
+<li>application对象的基类是：javax.servlet.ServletContext类。<ul>
+<li>所以我们可以直接获取servletcontext中的绑定的数据而不用去先获取servletcontext对象</li>
+</ul>
+</li>
+<li>application的常见方法<blockquote>
+<p>String getAttribute(String name)     根据属性名称获取属性值<br>Enumeration getAttributeNames()     获取所有的属性名称。<br>void setAttribute(String name, Object object)     设置属性，指定属性名称和属性值。<br>void removeAttribute(String name)     根据属性名称删除对应的属性。<br>String getContextPath()     获取当前Web应用程序的根目录<br>String getContextPath()     获取当前Web应用程序的根目录。</p>
+<blockquote>
+<p> <strong>request也有一个getContextPath() 相比之下更建议使用application的</strong><br>&lt;%=request.getContextPath()%&gt; 该方法的使用是为了解决相对路径的问题，可返回站点的根路径也就是webContent。</p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><h4 id="jsp当中上下文使用方法"><a href="#jsp当中上下文使用方法" class="headerlink" title="jsp当中上下文使用方法"></a>jsp当中上下文使用方法</h4><ul>
+<li>详见jsp掌中的隐藏对象</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="关于web-xml文件的书写格式"><a href="#关于web-xml文件的书写格式" class="headerlink" title="关于web.xml文件的书写格式"></a>关于web.xml文件的书写格式</h3><ol>
+<li>一般在web.xml文件当中的顺序<blockquote>
+<p>1.全局初始化参数<br>2.过滤器<br>3.监听器<br>4.servlet  </p>
+<ol start="5">
+<li>打开地址(只需要写到应用名)后的首页  地址必须为 .jsp .html文件  <blockquote>
+<p><img src="https://s2.ax1x.com/2019/06/12/VRhpwR.png" alt="446">    </p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<hr>
+<h3 id="session和监听器的小案例-测试一个web程序同时在线的人数"><a href="#session和监听器的小案例-测试一个web程序同时在线的人数" class="headerlink" title="session和监听器的小案例(测试一个web程序同时在线的人数)"></a>session和监听器的小案例(测试一个web程序同时在线的人数)</h3><pre><code>package web;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+/**
+ * 测试监听器
+ * @author wc
+ *
+ */
+public class countListener implements HttpSessionListener {
+
+/**
+ * 当session被创建时就会调用该方法
+ */
+@Override
+public void sessionCreated(HttpSessionEvent arg0) {
+    System.out.println(&quot;session 创建起来了...&quot;);
+    //这里只能通过session获取servletContext
+    //通过这个参数HttpSessionEvent arg0来获取被创建的seesion
+    HttpSession s = arg0.getSession();
+    ServletContext sctx  = s.getServletContext();
+
+    Integer count =(Integer) sctx.getAttribute(&quot;count&quot;);
+    if (count==null) {
+        count=1;
+
+    } else{
+        count++;
+    }
+    sctx.setAttribute(&quot;count&quot;, count);
+
+}
+
+/**
+ * 同样当session被删除就调用该方法
+ */
+@Override
+public void sessionDestroyed(HttpSessionEvent arg0) {
+    System.out.println(&quot;session 销毁了..&quot;);
+
+    HttpSession s = arg0.getSession();
+    ServletContext sctx = s.getServletContext();
+
+    Integer count = (Integer)sctx.getAttribute(&quot;count&quot;);
+    count--;
+    sctx.setAttribute(&quot;count&quot;, count);
+
+
+
+}
+
+}
+
+
+
+&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=utf-8&quot;
+pageEncoding=&quot;utf-8&quot;%&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+&lt;title&gt;测试用户在线的人数&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+当前在线的人数为：&lt;%=application.getAttribute(&quot;count&quot;) %&gt;&lt;a href=&quot;&lt;%=application.getContextPath() %&gt;/logout&quot;&gt;退出当前登陆&lt;/a&gt;
+
+  &lt;%
+    System.out.println(application.getAttribute(&quot;count&quot;));
+
+   %&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><hr>
+<h3 id="servlet线程安全问题"><a href="#servlet线程安全问题" class="headerlink" title="servlet线程安全问题"></a>servlet线程安全问题</h3><ol>
+<li>为什么servlet存在线程安全问题？<ol>
+<li>容器在默认情况下只会创建一个Servlet实例</li>
+<li>容器收到一个请求，就会启动一个线程来处理，如果有多个请求同时访问某个Servlet,就会导致多个线程调用同一个servlet实例，就有可能产生线程安全问题（如多个线程修改servlet的属性）</li>
+<li>如何解决？<ol>
+<li>使用synchonized对有可能产生线程安全问题的代码块枷锁<strong>加锁的话会影响性能</strong></li>
 </ol>
 </li>
 </ol>
@@ -698,7 +852,7 @@ public void init(FilterConfig arg0) throws ServletException {
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/categories/index.html">
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -766,7 +920,7 @@ public void init(FilterConfig arg0) throws ServletException {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Filter"><span class="nav-number">1.</span> <span class="nav-text">Filter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是过滤器？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是过滤器？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何写一个过滤器？"><span class="nav-number">1.2.</span> <span class="nav-text">如何写一个过滤器？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的优先级"><span class="nav-number">1.3.</span> <span class="nav-text">过滤器的优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的初始化参数的使用"><span class="nav-number">1.4.</span> <span class="nav-text">过滤器的初始化参数的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的优点"><span class="nav-number">1.5.</span> <span class="nav-text">过滤器的优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的相关代码"><span class="nav-number">1.6.</span> <span class="nav-text">过滤器的相关代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Listener"><span class="nav-number">2.</span> <span class="nav-text">Listener</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是监听器？-框架中用到"><span class="nav-number">2.1.</span> <span class="nav-text">什么是监听器？(框架中用到)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet上下文"><span class="nav-number">3.</span> <span class="nav-text">servlet上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是servlet上下文？"><span class="nav-number">3.1.</span> <span class="nav-text">什么是servlet上下文？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#servlet上下文特点"><span class="nav-number">3.2.</span> <span class="nav-text">servlet上下文特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何获取上下文？"><span class="nav-number">3.3.</span> <span class="nav-text">如何获取上下文？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上下文的作用："><span class="nav-number">3.4.</span> <span class="nav-text">上下文的作用：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Filter"><span class="nav-number">1.</span> <span class="nav-text">Filter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是过滤器？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是过滤器？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何写一个过滤器？"><span class="nav-number">1.2.</span> <span class="nav-text">如何写一个过滤器？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的优先级"><span class="nav-number">1.3.</span> <span class="nav-text">过滤器的优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的初始化参数的使用"><span class="nav-number">1.4.</span> <span class="nav-text">过滤器的初始化参数的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的优点"><span class="nav-number">1.5.</span> <span class="nav-text">过滤器的优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器的相关代码"><span class="nav-number">1.6.</span> <span class="nav-text">过滤器的相关代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Listener"><span class="nav-number">2.</span> <span class="nav-text">Listener</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是监听器？-框架中用到"><span class="nav-number">2.1.</span> <span class="nav-text">什么是监听器？(框架中用到)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet上下文"><span class="nav-number">3.</span> <span class="nav-text">servlet上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是servlet上下文？"><span class="nav-number">3.1.</span> <span class="nav-text">什么是servlet上下文？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#servlet上下文特点"><span class="nav-number">3.2.</span> <span class="nav-text">servlet上下文特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何获取上下文？"><span class="nav-number">3.3.</span> <span class="nav-text">如何获取上下文？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上下文的作用："><span class="nav-number">3.4.</span> <span class="nav-text">上下文的作用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#application的使用"><span class="nav-number">3.5.</span> <span class="nav-text">application的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp当中上下文使用方法"><span class="nav-number">3.6.</span> <span class="nav-text">jsp当中上下文使用方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于web-xml文件的书写格式"><span class="nav-number">4.</span> <span class="nav-text">关于web.xml文件的书写格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session和监听器的小案例-测试一个web程序同时在线的人数"><span class="nav-number">5.</span> <span class="nav-text">session和监听器的小案例(测试一个web程序同时在线的人数)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet线程安全问题"><span class="nav-number">6.</span> <span class="nav-text">servlet线程安全问题</span></a></li></ol></div>
             
 
           </div>
