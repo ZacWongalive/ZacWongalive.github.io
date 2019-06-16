@@ -110,7 +110,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsHIKJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsqGkt.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/Vsq21U.png">
-<meta property="og:updated_time" content="2019-06-10T16:24:19.822Z">
+<meta property="og:updated_time" content="2019-06-16T12:48:53.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sevlet和Jsp相关的概念">
 <meta name="twitter:description" content="什么是servlet? 是sun公司制定的一种用来拓展web服务器功能 的 组件规范。    拓展web服务器功能的含义  web服务器只能处理静态的资源请求（即需要事先将html文件准备好),可以使用servlet来扩展（即web服务器可以通过servlet来处理动态资源的请求，比如访问数据库）。   组件规范的含义  什么是组件？    符合一定规范，实现部分功能的，并且需要部署到响应的容器中">
@@ -773,7 +773,7 @@ HTML和少量的java代码，容器会将JSP文件自动转化成一个servlet
 <li>setAttribute getAttribute removeAtrribute</li>
 </ul>
   <em>注：绑定到pageContext上的数据只有对应的jsp实例能访问 详细看WebText09-2 a5.jsp a6.jsp</em></li>
-<li>2.获得其他的隐藏对象<pre><code>*我们可以通过一个java类获取jsp当中的其他隐藏对象*</code></pre></li>
+<li>2.获得其他的隐藏对象<pre><code>*我们可以通过它在一个java类获取jsp当中的其他隐藏对象*</code></pre></li>
 </ul>
 </li>
 </ul>
@@ -819,8 +819,10 @@ a7.jsp文件</code></pre></li>
 <li><p>page指令</p>
 <ul>
 <li>import属性：导包用的 比如<code>&lt;%@page import=&quot;java.util.*&quot;&gt;</code></li>
-<li>中文处理  <code>contentType=&quot;text/html; charset=utf-8&quot;
-pageEncoding=&quot;utf-8&quot;</code></li>
+<li>中文处理  `contentType=”text/html; charset=utf-8”</li>
+<li>session 属性： true(缺省) /false ，当值为false时不能在Jsp中使用session隐藏对象</li>
+<li>errorPage: 指定一个异常处理页面</li>
+<li>isErrorPage: true/false(缺省)，当值为true时，表示这是一个异常处理界面，可以使用exception对象<br>pageEncoding=”utf-8”`</li>
 </ul>
 </li>
 <li><p>include指令<br>告诉容器，在jsp文件转换成servlet类时，将file属性指定的文件的内容插入到该指令所在的位置》比如：<code>&lt;%@include file=&quot;header.jsp&quot;%&gt;</code></p>
@@ -843,7 +845,11 @@ pageEncoding=&quot;utf-8&quot;</code></li>
                 java代码片段 --&gt;  service方法里，照搬  
                 jsp表达式---&gt; serivce方法里，使用 out.print(java表达式)输出  
                 jsp声明    --&gt;给servlet增加新的属性或者方法
-    2. 容器调用servlet.     </code></pre><hr>
+    2. 容器调用servlet.     </code></pre><ul>
+<li><h4 id="jsp当中的注释"><a href="#jsp当中的注释" class="headerlink" title="jsp当中的注释"></a>jsp当中的注释</h4><pre><code>- `&lt;!--内容 --&gt;`
+-  `&lt;%-- 内容--%&gt;` 建议使用第二种注释方式</code></pre></li>
+</ul>
+<hr>
 <h4 id="处理servlet运行时产生的异常"><a href="#处理servlet运行时产生的异常" class="headerlink" title="处理servlet运行时产生的异常"></a>处理servlet运行时产生的异常</h4><ol>
 <li><p>编程式处理          </p>
 <ol>
@@ -966,8 +972,8 @@ pageEncoding=&quot;utf-8&quot;</code></li>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/10/状态管理/" rel="prev" title="状态管理">
-                状态管理 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/10/Filter和Listener的使用/" rel="prev" title="Filter和Listener的使用">
+                Filter和Listener的使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1050,7 +1056,7 @@ pageEncoding=&quot;utf-8&quot;</code></li>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1071,8 +1077,8 @@ pageEncoding=&quot;utf-8&quot;</code></li>
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1139,7 +1145,7 @@ pageEncoding=&quot;utf-8&quot;</code></li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是servlet"><span class="nav-number">1.</span> <span class="nav-text">什么是servlet?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何写一个servlet呢？"><span class="nav-number">2.</span> <span class="nav-text">如何写一个servlet呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet是如何运行的？"><span class="nav-number">3.</span> <span class="nav-text">servlet是如何运行的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的问题-状态码-表示的是服务器处理请求的一种状态"><span class="nav-number">4.</span> <span class="nav-text">常见的问题 状态码(表示的是服务器处理请求的一种状态)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码问题"><span class="nav-number">5.</span> <span class="nav-text">编码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用jdbc访问数据库"><span class="nav-number">6.</span> <span class="nav-text">使用jdbc访问数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向的使用"><span class="nav-number">7.</span> <span class="nav-text">重定向的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet组成及其mvc的覆盖"><span class="nav-number">8.</span> <span class="nav-text">servlet组成及其mvc的覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于mysql的中文支持问题"><span class="nav-number">9.</span> <span class="nav-text">关于mysql的中文支持问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet的生命周期"><span class="nav-number">10.</span> <span class="nav-text">servlet的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器如何处理请求资源路径"><span class="nav-number">11.</span> <span class="nav-text">容器如何处理请求资源路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP"><span class="nav-number">12.</span> <span class="nav-text">JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是jsp"><span class="nav-number">12.1.</span> <span class="nav-text">什么是jsp?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么创建一个jsp文件？"><span class="nav-number">12.2.</span> <span class="nav-text">怎么创建一个jsp文件？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隐藏对象"><span class="nav-number">12.2.1.</span> <span class="nav-text">隐藏对象</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理servlet运行时产生的异常"><span class="nav-number">12.3.</span> <span class="nav-text">处理servlet运行时产生的异常</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转发"><span class="nav-number">13.</span> <span class="nav-text">转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区分重定向和转发"><span class="nav-number">14.</span> <span class="nav-text">区分重定向和转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于路径的相关问题"><span class="nav-number">15.</span> <span class="nav-text">关于路径的相关问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是servlet"><span class="nav-number">1.</span> <span class="nav-text">什么是servlet?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何写一个servlet呢？"><span class="nav-number">2.</span> <span class="nav-text">如何写一个servlet呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet是如何运行的？"><span class="nav-number">3.</span> <span class="nav-text">servlet是如何运行的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的问题-状态码-表示的是服务器处理请求的一种状态"><span class="nav-number">4.</span> <span class="nav-text">常见的问题 状态码(表示的是服务器处理请求的一种状态)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码问题"><span class="nav-number">5.</span> <span class="nav-text">编码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用jdbc访问数据库"><span class="nav-number">6.</span> <span class="nav-text">使用jdbc访问数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向的使用"><span class="nav-number">7.</span> <span class="nav-text">重定向的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet组成及其mvc的覆盖"><span class="nav-number">8.</span> <span class="nav-text">servlet组成及其mvc的覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于mysql的中文支持问题"><span class="nav-number">9.</span> <span class="nav-text">关于mysql的中文支持问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet的生命周期"><span class="nav-number">10.</span> <span class="nav-text">servlet的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器如何处理请求资源路径"><span class="nav-number">11.</span> <span class="nav-text">容器如何处理请求资源路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP"><span class="nav-number">12.</span> <span class="nav-text">JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是jsp"><span class="nav-number">12.1.</span> <span class="nav-text">什么是jsp?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么创建一个jsp文件？"><span class="nav-number">12.2.</span> <span class="nav-text">怎么创建一个jsp文件？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隐藏对象"><span class="nav-number">12.2.1.</span> <span class="nav-text">隐藏对象</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp当中的注释"><span class="nav-number">12.3.</span> <span class="nav-text">jsp当中的注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理servlet运行时产生的异常"><span class="nav-number">12.4.</span> <span class="nav-text">处理servlet运行时产生的异常</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转发"><span class="nav-number">13.</span> <span class="nav-text">转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区分重定向和转发"><span class="nav-number">14.</span> <span class="nav-text">区分重定向和转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于路径的相关问题"><span class="nav-number">15.</span> <span class="nav-text">关于路径的相关问题</span></a></li></ol></div>
             
 
           </div>
