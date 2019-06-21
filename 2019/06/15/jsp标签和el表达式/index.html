@@ -95,6 +95,16 @@
 <meta property="og:description" content="jsp标签 什么是Jsp标签？ jsp标签用来替换jsp中的java代码，因为直接在jsp文件当中写java代码不方便Jsp文件维护（比如，将Jsp文件交给美工去修改就很不方便，所以sun公司就制定了jsp标签技术规范. 可以将jsp变迁看作是一个占位符，容器遇到jsp标签之后，会依据标签名找到标签类，然后调用标签类中的方法。 使用Jsp标签，有两个好处： jsp文件很好维护 方便代码的复用（可以">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V7Q359.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/VHJPw6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/VHJKmt.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/VHYBDI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/VbruNj.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/VbrK4s.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/18/VbgQXt.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/18/Vbg878.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/18/VbfnVP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/18/VqHIw4.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/18/VqbFpt.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V7UtFf.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V7a6ud.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V7aEcQ.md.png">
@@ -110,7 +120,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V76eu8.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V76nHg.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V76KEQ.png">
-<meta property="og:updated_time" content="2019-06-16T18:22:21.942Z">
+<meta property="og:updated_time" content="2019-06-18T07:51:08.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jsp标签和el表达式">
 <meta name="twitter:description" content="jsp标签 什么是Jsp标签？ jsp标签用来替换jsp中的java代码，因为直接在jsp文件当中写java代码不方便Jsp文件维护（比如，将Jsp文件交给美工去修改就很不方便，所以sun公司就制定了jsp标签技术规范. 可以将jsp变迁看作是一个占位符，容器遇到jsp标签之后，会依据标签名找到标签类，然后调用标签类中的方法。 使用Jsp标签，有两个好处： jsp文件很好维护 方便代码的复用（可以">
@@ -435,13 +445,83 @@
 </ol>
 </li>
 <li><h4 id="jstl当中几个核心的标签"><a href="#jstl当中几个核心的标签" class="headerlink" title="jstl当中几个核心的标签"></a>jstl当中几个核心的标签</h4><ol>
-<li>if<ol>
+<li><p>if</p>
+<ol>
 <li>格式&lt;c:if text=””&gt;标签体 <ul>
 <li>在这里if就是一个表亲，需要介绍命名空间和前缀</li>
 <li>命名空间：为了区分同名元素而设置的的一个字符串</li>
 <li>而如果这个标签在jsp页面中就会有个对应的taglib标签&lt;%@taglib uri=”<a href="http://www.tarena.com.cn&quot;" target="_blank" rel="noopener">http://www.tarena.com.cn&quot;</a> prefix=”c”%&gt; uri 就是命名空间  prefix就是前缀(别名)</li>
 <li>当text属性值为true时，容器会执行标签体的内容。text属性可以使用el表达式来计算。</li>
+<li><img src="https://s2.ax1x.com/2019/06/17/VHJPw6.png" alt="注意要导jar包"></li>
+<li><img src="https://s2.ax1x.com/2019/06/17/VHJKmt.png" alt="6523">这里的话解释以下&lt;c:if&gt;标签的执行流程：当容器看到这个if标签的时候就会根据taglib标签当中指定的前缀和命名规范往jstl.jar中找到相应的标签类。将标签类实例化并执行里面的方法<strong>test那块的意思就是如果request当中绑定的user的gender为’f’的话就执行&lt;c:if&gt;当中的内容，显示为男，var和scope那块的话，意思就是将test的属性那块的el表达式的结果作为 request.setatrribute(‘flag’,’el表达式结果true/false’) 绑定起来。所以在判断性别不为’f’的时候，就直接再命名一个标签test的属性值就依据flag来确定</strong></li>
+<li>scope绑定的范围只能是<strong>page,application,session,application</strong></li>
+<li><img src="https://s2.ax1x.com/2019/06/17/VHYBDI.png" alt="785"></li>
 </ul>
+</li>
+</ol>
+</li>
+<li><p>choose</p>
+<ol>
+<li><p>格式</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">		&lt;C:choose&gt;</span><br><span class="line">			&lt;c:when test=&quot;&quot;&gt;</span><br><span class="line">			&lt;/c:when&gt;</span><br><span class="line">			&lt;c:otherwise&gt;</span><br><span class="line">			&lt;/c:otherwise&gt;	</span><br><span class="line">		&lt;/c:choose&gt;</span><br><span class="line">		``` when可以出现一次或者多次，表示一个分支,当test为true时，执行该分支。otherwise可以出现0次或者1次，表示例外![356](https://s2.ax1x.com/2019/06/17/VbUXX4.png)![583](https://s2.ax1x.com/2019/06/17/Vba1gS.png)  </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">3.  forEach</span><br><span class="line">	1. 格式</span><br><span class="line">	```&lt;c:forEach items=&quot;&quot; var=&quot;&quot; varStatus=&quot;&quot;&gt; &lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用来便利集合或者数组。</li>
+<li>items属性：用来指定要遍历的集合或者数组，可以使用el表达式。</li>
+<li>var属性：用来指定一个绑定名，绑定范围固定是pageContext.<ul>
+<li>注：没次从集合或者数组中取一个元素，然后将其绑定导pageContext上，绑定名由var属性来指定。</li>
+</ul>
+</li>
+<li><img src="https://s2.ax1x.com/2019/06/17/VbruNj.png" alt="993"><img src="https://s2.ax1x.com/2019/06/17/VbrK4s.png" alt="9527"></li>
+<li>varStatus 用来指定一个绑定名，绑定范围固定是pageContext<ul>
+<li>绑定值是一个特殊的对象，该对象提供了一些方法，用来获得当前遍历的状态。</li>
+<li>getIndex():获得当前被遍历的元素的下标（从0开始）。</li>
+<li>getCount():获得当前是从第几次遍历(从1开始)</li>
+<li><img src="https://s2.ax1x.com/2019/06/18/VbgQXt.png" alt="652"><img src="https://s2.ax1x.com/2019/06/18/Vbg878.png" alt="639"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>forEach标签的示例详细看R中的emplist.jsp和update.jsp文件移除jsp文件当中的java代码<img src="https://s2.ax1x.com/2019/06/18/VbfnVP.png" alt="5532"></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h4 id="自定义标签"><a href="#自定义标签" class="headerlink" title="自定义标签"></a>自定义标签</h4><ol>
+<li><p>如何自定义标签？</p>
+<ol>
+<li><p>写一个Java类，继承SimpleTagSupport类(简单标签技术类)。</p>
+</li>
+<li><p>override doTag方法，在该方法里面 编写处理逻辑。</p>
+<ol>
+<li>标签有哪些属性，标签类要有对应的属性<ol>
+<li>a.要求属性名一直</li>
+<li>b.类型要匹配</li>
+<li>c.这些属性要有对应的set方法</li>
+<li>d.为什么需要set方法呢？ 详细看p25 1:33:18</li>
+<li>这个自定义标签到底是怎么执行的？详细看P25 2:31:29</li>
+</ol>
+</li>
+<li><img src="https://s2.ax1x.com/2019/06/18/VqHIw4.png" alt="9966"></li>
+</ol>
+</li>
+<li><p>描述标签（.tld文件）*<em>就是绑定标签和标签类的对应关系 *</em></p>
+<ol>
+<li><p>注意：</p>
+<ol>
+<li><p>tld文件要放在WEB-INF\下。</p>
+</li>
+<li><p><body-content>的值可以是</body-content></p>
+<blockquote>
+<p>empty:该标签没有标签体<br>scriptless：可以有标签体，并且标签体的内容不能出现java代码（&lt;% %&gt;,&lt;%= %&gt;,&lt;%!  %&gt;）<br> JSP: 可以出现Java代码。但是，只有负载标签技术才支持改制，简单标签技术只支持empty和scriptless.</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p><img src="https://s2.ax1x.com/2019/06/18/VqbFpt.png" alt="5266">  </p>
 </li>
 </ol>
 </li>
@@ -554,6 +634,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/06/18/spring/" rel="prev" title="spring">
+                spring <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -634,7 +718,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -656,7 +740,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -723,7 +807,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp标签"><span class="nav-number">1.</span> <span class="nav-text">jsp标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Jsp标签？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Jsp标签？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jstl-javaa-standard-tag-lib-java标准标签库"><span class="nav-number">1.2.</span> <span class="nav-text">jstl(javaa standard tag lib java标准标签库)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jstl-是什么？"><span class="nav-number">1.3.</span> <span class="nav-text">jstl 是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么使用jstl"><span class="nav-number">1.4.</span> <span class="nav-text">怎么使用jstl?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jstl当中几个核心的标签"><span class="nav-number">1.5.</span> <span class="nav-text">jstl当中几个核心的标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#el表达式"><span class="nav-number">2.</span> <span class="nav-text">el表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是el表达式？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是el表达式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#el表达式的使用"><span class="nav-number">2.2.</span> <span class="nav-text">el表达式的使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp标签"><span class="nav-number">1.</span> <span class="nav-text">jsp标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Jsp标签？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Jsp标签？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jstl-javaa-standard-tag-lib-java标准标签库"><span class="nav-number">1.2.</span> <span class="nav-text">jstl(javaa standard tag lib java标准标签库)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jstl-是什么？"><span class="nav-number">1.3.</span> <span class="nav-text">jstl 是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么使用jstl"><span class="nav-number">1.4.</span> <span class="nav-text">怎么使用jstl?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jstl当中几个核心的标签"><span class="nav-number">1.5.</span> <span class="nav-text">jstl当中几个核心的标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义标签"><span class="nav-number">1.6.</span> <span class="nav-text">自定义标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#el表达式"><span class="nav-number">2.</span> <span class="nav-text">el表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是el表达式？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是el表达式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#el表达式的使用"><span class="nav-number">2.2.</span> <span class="nav-text">el表达式的使用</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -110,7 +110,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsHIKJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsqGkt.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/Vsq21U.png">
-<meta property="og:updated_time" content="2019-06-16T12:48:53.834Z">
+<meta property="og:updated_time" content="2019-06-19T16:31:42.245Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sevlet和Jsp相关的概念">
 <meta name="twitter:description" content="什么是servlet? 是sun公司制定的一种用来拓展web服务器功能 的 组件规范。    拓展web服务器功能的含义  web服务器只能处理静态的资源请求（即需要事先将html文件准备好),可以使用servlet来扩展（即web服务器可以通过servlet来处理动态资源的请求，比如访问数据库）。   组件规范的含义  什么是组件？    符合一定规范，实现部分功能的，并且需要部署到响应的容器中">
@@ -621,7 +621,7 @@
 <li><p>什么时候实例化？</p>
 <ul>
 <li>情况一.容器收到请求之后</li>
-<li>情况二.容器启动后立即创建  <pre><code>*只需要在web.xml文件中加上一个&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;（这个标签里面的参数值要求是一个大于等于0的整数这个整数越小，优先级就越高。（即先创建）*</code></pre></li>
+<li>情况二.容器启动后立即创建  <pre><code>*只需要在web.xml文件中加上一个&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;（这个标签里面的参数值要求是一个大于等于0的整数这个整数越小，优先级就越高。（即先创建）* **一般项目当中都是将所有的servlet都设置成&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;虽然这样服务器加载慢，但是一旦服务器接受请求，运行就快多了**</code></pre></li>
 </ul>
 </li>
 <li><p>注：容器只会创建一个实例 </p>
@@ -1056,7 +1056,7 @@ a7.jsp文件</code></pre></li>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1078,7 +1078,7 @@ a7.jsp文件</code></pre></li>
               
               <div class="site-state-item site-state-tags">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
