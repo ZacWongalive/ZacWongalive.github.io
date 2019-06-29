@@ -95,7 +95,7 @@
 <meta property="og:description" content="关于空格的问题 无论是写入多少个连续的space 或者 Tab 或者 Enter，一般渲染之后都是只会显示一个空格.  如果想要进行硬换行的话需要在上一行写上两个 space 和 Enter就像这样  如果两行文字之间存在一个或者多个空行那么这些空行渲染后只会显示一行空行，如果在书写的时候 两行空开了那么渲染后自动空一行   就像这样    关于段落问题 在所有段落前后空行就是了 例如：    这">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://images.pexels.com/photos/2331573/pexels-photo-2331573.jpeg?cs=srgb&dl=architecture-bridge-california-2331573.jpg&fm=jpg">
-<meta property="og:updated_time" content="2019-06-04T14:20:19.661Z">
+<meta property="og:updated_time" content="2019-06-21T20:08:58.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="markdown的使用">
 <meta name="twitter:description" content="关于空格的问题 无论是写入多少个连续的space 或者 Tab 或者 Enter，一般渲染之后都是只会显示一个空格.  如果想要进行硬换行的话需要在上一行写上两个 space 和 Enter就像这样  如果两行文字之间存在一个或者多个空行那么这些空行渲染后只会显示一行空行，如果在书写的时候 两行空开了那么渲染后自动空一行   就像这样    关于段落问题 在所有段落前后空行就是了 例如：    这">
@@ -542,19 +542,39 @@
 </li>
 <li><p>在第二行的单元格还可以控制本列的对其方式。在一串<code>-</code>左侧加<code>:</code>可以左对齐。右侧加右对齐。双侧加居中。</p>
 </li>
+<li><p>例如(好像没出效果) </p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th align="left">left-align</th>
+<th align="center">center-align</th>
+<th align="right">right-align</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">git status</td>
+<td align="center">git status</td>
+<td align="right">git status</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>还是得使用html标签呀</p>
+<ul>
+<li><table><tr><th>Tables</th><th>Are</th><th>Cool</th></tr><tr><td>col 1 is</td><td>left-aligned</td><td>$1600</td></tr><tr><td>col 2 is</td><td>centered</td><td>$12</td></tr><tr><td>col 3 is</td><td>right-aligned</td><td>$1</td></tr></table>
+
+
+
+
+</li>
+</ul>
+</li>
 </ol>
 </li>
 </ul>
-<pre><code>7. 例如(好像没出效果) 
-
-        | left-align | center-align | right-align |
-        | :---       | :---:        |    ---:     |
-        | git status |   git status |  git status |
-
-
-8. 还是得使用html标签呀
-
-    &lt;table&gt;&lt;tr&gt;&lt;th&gt;Tables&lt;/th&gt;&lt;th&gt;Are&lt;/th&gt;&lt;th&gt;Cool&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;col 1 is&lt;/td&gt;&lt;td&gt;left-aligned&lt;/td&gt;&lt;td&gt;$1600&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;col 2 is&lt;/td&gt;&lt;td&gt;centered&lt;/td&gt;&lt;td&gt;$12&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;col 3 is&lt;/td&gt;&lt;td&gt;right-aligned&lt;/td&gt;&lt;td&gt;$1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre><hr>
+<hr>
 
       
     </div>
@@ -681,7 +701,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -692,7 +712,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>

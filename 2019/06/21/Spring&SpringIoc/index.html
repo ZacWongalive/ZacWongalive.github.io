@@ -86,45 +86,64 @@
 
 
 
-<meta name="description" content="jsp标签 什么是Jsp标签？ jsp标签用来替换jsp中的java代码，因为直接在jsp文件当中写java代码不方便Jsp文件维护（比如，将Jsp文件交给美工去修改就很不方便，所以sun公司就制定了jsp标签技术规范. 可以将jsp变迁看作是一个占位符，容器遇到jsp标签之后，会依据标签名找到标签类，然后调用标签类中的方法。 使用Jsp标签，有两个好处： jsp文件很好维护 方便代码的复用（可以">
+<meta name="description" content="关于框架学习 框架有什么用？能帮我们做什么？ 帮我们做了哪些事？需要我们配合做哪些事？  熟悉框架的设计思想，至于如何实现，以后再去考虑 练习时，多练习即便，掌握开发主要步骤   spring框架 spring框架作用 spring core(ioc功能) spring Aop功能 总体作用来说，就是管理组件对象，维护对象关系，目的：降低组件之间的耦合度 （ 传统的web程序请求过程： 请求–&amp;g">
 <meta name="keywords" content="导航,分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jsp标签和el表达式">
-<meta property="og:url" content="http://yoursite.com/2019/06/15/jsp标签和el表达式/index.html">
+<meta property="og:title" content="Spring简介入门&amp;SpringIOC">
+<meta property="og:url" content="http://yoursite.com/2019/06/21/Spring&SpringIoc/index.html">
 <meta property="og:site_name" content="黑人Zac的博客">
-<meta property="og:description" content="jsp标签 什么是Jsp标签？ jsp标签用来替换jsp中的java代码，因为直接在jsp文件当中写java代码不方便Jsp文件维护（比如，将Jsp文件交给美工去修改就很不方便，所以sun公司就制定了jsp标签技术规范. 可以将jsp变迁看作是一个占位符，容器遇到jsp标签之后，会依据标签名找到标签类，然后调用标签类中的方法。 使用Jsp标签，有两个好处： jsp文件很好维护 方便代码的复用（可以">
+<meta property="og:description" content="关于框架学习 框架有什么用？能帮我们做什么？ 帮我们做了哪些事？需要我们配合做哪些事？  熟悉框架的设计思想，至于如何实现，以后再去考虑 练习时，多练习即便，掌握开发主要步骤   spring框架 spring框架作用 spring core(ioc功能) spring Aop功能 总体作用来说，就是管理组件对象，维护对象关系，目的：降低组件之间的耦合度 （ 传统的web程序请求过程： 请求–&amp;g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V7Q359.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/VHJPw6.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/VHJKmt.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/VHYBDI.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/VbruNj.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/VbrK4s.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/18/VbgQXt.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/18/Vbg878.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/18/VbfnVP.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/18/VqHIw4.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/18/VqbFpt.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V7UtFf.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V7a6ud.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V7aEcQ.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V7a8c4.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V70x8f.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/16/V70z28.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V7DBXF.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V7Dgt1.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V7Df1K.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V7DIne.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V76SBD.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V76PNd.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V76eu8.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V76nHg.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/06/17/V76KEQ.png">
-<meta property="og:updated_time" content="2019-06-18T07:51:08.121Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/20/Vv0G5D.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/21/ZSqBsH.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/21/ZSqgFP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/21/ZSqpPf.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/21/Zp9r3n.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/21/Zp9cuV.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/21/Zp9j4H.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/21/Zp9cuV.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpVvcQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpZSns.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpZGge.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpZUHI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpZwUP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpZ04f.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpZr8S.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpZfU0.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/Zpepxe.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpeAat.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpeEIP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/Zpe3aq.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/Zpmqtx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpmLh6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpmX9K.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/Zpn9HA.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpnPAI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpniNt.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpnF4P.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpnA9f.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpnUb9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpndER.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpnwU1.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/Zpn04x.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/ZpnDC6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/Z9AgeI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/Z9AolQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/22/Z9EepD.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZM5E9S.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZM5Ftf.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZM5B4K.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZM5yge.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZM5fEt.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZM5IC8.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZM5o8S.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZM57vQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZM5Lbn.png">
+<meta property="og:updated_time" content="2019-06-28T14:05:53.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jsp标签和el表达式">
-<meta name="twitter:description" content="jsp标签 什么是Jsp标签？ jsp标签用来替换jsp中的java代码，因为直接在jsp文件当中写java代码不方便Jsp文件维护（比如，将Jsp文件交给美工去修改就很不方便，所以sun公司就制定了jsp标签技术规范. 可以将jsp变迁看作是一个占位符，容器遇到jsp标签之后，会依据标签名找到标签类，然后调用标签类中的方法。 使用Jsp标签，有两个好处： jsp文件很好维护 方便代码的复用（可以">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/06/16/V7Q359.png">
+<meta name="twitter:title" content="Spring简介入门&amp;SpringIOC">
+<meta name="twitter:description" content="关于框架学习 框架有什么用？能帮我们做什么？ 帮我们做了哪些事？需要我们配合做哪些事？  熟悉框架的设计思想，至于如何实现，以后再去考虑 练习时，多练习即便，掌握开发主要步骤   spring框架 spring框架作用 spring core(ioc功能) spring Aop功能 总体作用来说，就是管理组件对象，维护对象关系，目的：降低组件之间的耦合度 （ 传统的web程序请求过程： 请求–&amp;g">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/06/20/Vv0G5D.png">
 
 
 
@@ -154,13 +173,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/15/jsp标签和el表达式/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/21/Spring&SpringIoc/">
 
 
 
 
 
-  <title>jsp标签和el表达式 | 黑人Zac的博客</title>
+  <title>Spring简介入门&SpringIOC | 黑人Zac的博客</title>
   
 
 
@@ -319,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/15/jsp标签和el表达式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/Spring&SpringIoc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chaor">
@@ -336,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jsp标签和el表达式</h1>
+          <h1 class="post-title" itemprop="name headline">Spring简介入门&SpringIOC</h1>
         
 
         <div class="post-meta">
@@ -348,8 +367,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-15T05:18:38+08:00">
-                2019-06-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-21T05:18:38+08:00">
+                2019-06-21
               </time>
             
 
@@ -371,8 +390,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习-javaweb/" itemprop="url" rel="index">
-                    <span itemprop="name">学习-javaweb</span>
+                  <a href="/categories/学习-java框架学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习-java框架学习</span>
                   </a>
                 </span>
 
@@ -389,8 +408,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/15/jsp标签和el表达式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/15/jsp标签和el表达式/" itemprop="commentCount"></span>
+                <a href="/2019/06/21/Spring&SpringIoc/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/21/Spring&SpringIoc/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -423,171 +442,261 @@
       
 
       
-        <h3 id="jsp标签"><a href="#jsp标签" class="headerlink" title="jsp标签"></a>jsp标签</h3><ol>
-<li><h4 id="什么是Jsp标签？"><a href="#什么是Jsp标签？" class="headerlink" title="什么是Jsp标签？"></a>什么是Jsp标签？</h4><ul>
-<li>jsp标签用来替换jsp中的java代码，因为直接在jsp文件当中写java代码不方便Jsp文件维护（比如，将Jsp文件交给美工去修改就很不方便，所以sun公司就制定了jsp标签技术规范.<br><img src="https://s2.ax1x.com/2019/06/16/V7Q359.png" alt="44"></li>
-<li><strong>可以将jsp变迁看作是一个占位符，容器遇到jsp标签之后，会依据标签名找到标签类，然后调用标签类中的方法。</strong></li>
-<li>使用Jsp标签，有两个好处：<ul>
-<li>jsp文件很好维护</li>
-<li>方便代码的复用（可以将一些常见的代码封装成一个jsp标签）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h4 id="jstl-javaa-standard-tag-lib-java标准标签库"><a href="#jstl-javaa-standard-tag-lib-java标准标签库" class="headerlink" title="jstl(javaa standard tag lib java标准标签库)"></a>jstl(javaa standard tag lib java标准标签库)</h4><ol>
-<li><h4 id="jstl-是什么？"><a href="#jstl-是什么？" class="headerlink" title="jstl 是什么？"></a>jstl 是什么？</h4><ul>
-<li>apache开发的一套Jsp标签，后来捐献给了sun,sun将其命名为jstl。 </li>
-</ul>
-</li>
-<li><h4 id="怎么使用jstl"><a href="#怎么使用jstl" class="headerlink" title="怎么使用jstl?"></a>怎么使用jstl?</h4><ol>
-<li>将jstl相关的jar文件拷贝到WEB-INF\lib下。 <strong>如果使用javaee5.0就一般不用导包</strong></li>
-<li>使用taglib指令导入相应的标签 </li>
+        <h3 id="关于框架学习"><a href="#关于框架学习" class="headerlink" title="关于框架学习"></a>关于框架学习</h3><ol>
+<li>框架有什么用？能帮我们做什么？</li>
+<li>帮我们做了哪些事？需要我们配合做哪些事？ </li>
+<li>熟悉框架的设计思想，至于如何实现，以后再去考虑</li>
+<li>练习时，多练习即便，掌握开发主要步骤</li>
 </ol>
-</li>
-<li><h4 id="jstl当中几个核心的标签"><a href="#jstl当中几个核心的标签" class="headerlink" title="jstl当中几个核心的标签"></a>jstl当中几个核心的标签</h4><ol>
-<li><p>if</p>
-<ol>
-<li>格式&lt;c:if text=””&gt;标签体 <ul>
-<li>在这里if就是一个表亲，需要介绍命名空间和前缀</li>
-<li>命名空间：为了区分同名元素而设置的的一个字符串</li>
-<li>而如果这个标签在jsp页面中就会有个对应的taglib标签&lt;%@taglib uri=”<a href="http://www.tarena.com.cn&quot;" target="_blank" rel="noopener">http://www.tarena.com.cn&quot;</a> prefix=”c”%&gt; uri 就是命名空间  prefix就是前缀(别名)</li>
-<li>当text属性值为true时，容器会执行标签体的内容。text属性可以使用el表达式来计算。</li>
-<li><img src="https://s2.ax1x.com/2019/06/17/VHJPw6.png" alt="注意要导jar包"></li>
-<li><img src="https://s2.ax1x.com/2019/06/17/VHJKmt.png" alt="6523">这里的话解释以下&lt;c:if&gt;标签的执行流程：当容器看到这个if标签的时候就会根据taglib标签当中指定的前缀和命名规范往jstl.jar中找到相应的标签类。将标签类实例化并执行里面的方法<strong>test那块的意思就是如果request当中绑定的user的gender为’f’的话就执行&lt;c:if&gt;当中的内容，显示为男，var和scope那块的话，意思就是将test的属性那块的el表达式的结果作为 request.setatrribute(‘flag’,’el表达式结果true/false’) 绑定起来。所以在判断性别不为’f’的时候，就直接再命名一个标签test的属性值就依据flag来确定</strong></li>
-<li>scope绑定的范围只能是<strong>page,application,session,application</strong></li>
-<li><img src="https://s2.ax1x.com/2019/06/17/VHYBDI.png" alt="785"></li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>choose</p>
-<ol>
-<li><p>格式</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">		&lt;C:choose&gt;</span><br><span class="line">			&lt;c:when test=&quot;&quot;&gt;</span><br><span class="line">			&lt;/c:when&gt;</span><br><span class="line">			&lt;c:otherwise&gt;</span><br><span class="line">			&lt;/c:otherwise&gt;	</span><br><span class="line">		&lt;/c:choose&gt;</span><br><span class="line">		``` when可以出现一次或者多次，表示一个分支,当test为true时，执行该分支。otherwise可以出现0次或者1次，表示例外![356](https://s2.ax1x.com/2019/06/17/VbUXX4.png)![583](https://s2.ax1x.com/2019/06/17/Vba1gS.png)  </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">3.  forEach</span><br><span class="line">	1. 格式</span><br><span class="line">	```&lt;c:forEach items=&quot;&quot; var=&quot;&quot; varStatus=&quot;&quot;&gt; &lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>用来便利集合或者数组。</li>
-<li>items属性：用来指定要遍历的集合或者数组，可以使用el表达式。</li>
-<li>var属性：用来指定一个绑定名，绑定范围固定是pageContext.<ul>
-<li>注：没次从集合或者数组中取一个元素，然后将其绑定导pageContext上，绑定名由var属性来指定。</li>
-</ul>
-</li>
-<li><img src="https://s2.ax1x.com/2019/06/17/VbruNj.png" alt="993"><img src="https://s2.ax1x.com/2019/06/17/VbrK4s.png" alt="9527"></li>
-<li>varStatus 用来指定一个绑定名，绑定范围固定是pageContext<ul>
-<li>绑定值是一个特殊的对象，该对象提供了一些方法，用来获得当前遍历的状态。</li>
-<li>getIndex():获得当前被遍历的元素的下标（从0开始）。</li>
-<li>getCount():获得当前是从第几次遍历(从1开始)</li>
-<li><img src="https://s2.ax1x.com/2019/06/18/VbgQXt.png" alt="652"><img src="https://s2.ax1x.com/2019/06/18/Vbg878.png" alt="639"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>forEach标签的示例详细看R中的emplist.jsp和update.jsp文件移除jsp文件当中的java代码<img src="https://s2.ax1x.com/2019/06/18/VbfnVP.png" alt="5532"></p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><h4 id="自定义标签"><a href="#自定义标签" class="headerlink" title="自定义标签"></a>自定义标签</h4><ol>
-<li><p>如何自定义标签？</p>
-<ol>
-<li><p>写一个Java类，继承SimpleTagSupport类(简单标签技术类)。</p>
-</li>
-<li><p>override doTag方法，在该方法里面 编写处理逻辑。</p>
-<ol>
-<li>标签有哪些属性，标签类要有对应的属性<ol>
-<li>a.要求属性名一直</li>
-<li>b.类型要匹配</li>
-<li>c.这些属性要有对应的set方法</li>
-<li>d.为什么需要set方法呢？ 详细看p25 1:33:18</li>
-<li>这个自定义标签到底是怎么执行的？详细看P25 2:31:29</li>
-</ol>
-</li>
-<li><img src="https://s2.ax1x.com/2019/06/18/VqHIw4.png" alt="9966"></li>
-</ol>
-</li>
-<li><p>描述标签（.tld文件）*<em>就是绑定标签和标签类的对应关系 *</em></p>
-<ol>
-<li><p>注意：</p>
-<ol>
-<li><p>tld文件要放在WEB-INF\下。</p>
-</li>
-<li><p><body-content>的值可以是</body-content></p>
-<blockquote>
-<p>empty:该标签没有标签体<br>scriptless：可以有标签体，并且标签体的内容不能出现java代码（&lt;% %&gt;,&lt;%= %&gt;,&lt;%!  %&gt;）<br> JSP: 可以出现Java代码。但是，只有负载标签技术才支持改制，简单标签技术只支持empty和scriptless.</p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><p><img src="https://s2.ax1x.com/2019/06/18/VqbFpt.png" alt="5266">  </p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
+<hr>
+<h3 id="spring框架"><a href="#spring框架" class="headerlink" title="spring框架"></a>spring框架</h3><ol>
+<li><h4 id="spring框架作用"><a href="#spring框架作用" class="headerlink" title="spring框架作用"></a>spring框架作用</h4><ol>
+<li>spring core(ioc功能)</li>
+<li>spring Aop功能</li>
+<li>总体作用来说，就是<strong>管理组件对象，维护对象关系，目的：降低组件之间的耦合度</strong> （ <strong><em>传统的web程序请求过程： 请求–&gt;Servlet–&gt;service–&gt;多个Dao–&gt;jsp 现在用spring框架来做的话，就直接用spring框架来做前三步</em></strong>）  </li>
+<li>Spring Web MVC功能(MVC涉及，目的：架构一个mvc结构的web程序)</li>
+<li>spring整合其他技术（spring如何和structs技术，jdbc,mybaits，hibernate等技术整合在一起  <strong>在spring中使用整合API编程：spring–&gt;整合API–&gt;调用原有技术API</strong>）    </li>
 </ol>
 </li>
 </ol>
 <hr>
-<h3 id="el表达式"><a href="#el表达式" class="headerlink" title="el表达式"></a>el表达式</h3><ol>
-<li><h4 id="什么是el表达式？"><a href="#什么是el表达式？" class="headerlink" title="什么是el表达式？"></a>什么是el表达式？</h4><ul>
-<li>是一套简单的运算规则，用于给jsp标签的属性赋值，也可以直接输出</li>
-</ul>
+<h3 id="spring框架概述"><a href="#spring框架概述" class="headerlink" title="spring框架概述"></a>spring框架概述</h3><h2 id><a href="#" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/06/20/Vv0G5D.png" alt="655"></h2><h3 id="spingIOC应用"><a href="#spingIOC应用" class="headerlink" title="spingIOC应用"></a>spingIOC应用</h3><ol>
+<li><h4 id="概念-amp-作用："><a href="#概念-amp-作用：" class="headerlink" title="概念&amp;作用："></a>概念&amp;作用：</h4><ol>
+<li><p>IOC概念：Inversion of Control<strong>控制反转后反向控制：改变了对象获取方式，之前编码方式采用new构造器方式获取对象;ioc中采用由容器创建对象之后注入进来使用。只要修改配置就可以修改对象关系。 详细看p2 3:00:00</strong></p>
 </li>
-<li><h4 id="el表达式的使用"><a href="#el表达式的使用" class="headerlink" title="el表达式的使用"></a>el表达式的使用</h4><ol>
-<li>访问Bean的属性<ul>
-<li><strong>javabean就是一个java类有属性以及获取该属性的方法</strong></li>
-<li>方式一：<ul>
-<li>${user.name}<ul>
-<li>如何执行的？ 容器依次会从pageContext,request,session,application中查找(通过调用getAtrribute()方法)绑定名称为”user”的对象，并且调用该对象的”getName()”方法，最后输出getName()方法的返回结果。 </li>
-</ul>
-  <strong><em>注意：1.el表达式会将获取为Null的值转化成空字符串输出2.如果找不到该对象，则会输出空字符串3.如果要制定查找范围，可以使用pageScope,requestScope,sessionScope,application来指定。</em></strong><img src="https://s2.ax1x.com/2019/06/16/V7UtFf.png" alt="446"><img src="https://s2.ax1x.com/2019/06/16/V7a6ud.png" alt="44452"><img src="https://s2.ax1x.com/2019/06/16/V7aEcQ.md.png" alt="457"><img src="https://s2.ax1x.com/2019/06/16/V7a8c4.png" alt="sd"></li>
-</ul>
-</li>
-<li>方式二<ul>
-<li><strong>${user[“name”]}  等价于方式一</strong> </li>
-<li>注： <ul>
-<li>[]里面可以出现绑定名<strong>在下图中[str] 中 容器也会依次从pageContext,request,session,application中查找绑定名为str所对应的值</strong></li>
-<li><img src="https://s2.ax1x.com/2019/06/16/V70x8f.png" alt="ss"><img src="https://s2.ax1x.com/2019/06/16/V70z28.png" alt="87"></li>
-<li>[]里面可以出现从0开始的下表，用于访问数组中的某个元素<br><img src="https://s2.ax1x.com/2019/06/17/V7DBXF.png" alt="410"><img src="https://s2.ax1x.com/2019/06/17/V7Dgt1.png" alt="65"><img src="https://s2.ax1x.com/2019/06/17/V7Df1K.png" alt><img src="https://s2.ax1x.com/2019/06/17/V7DIne.png" alt="123"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>进行一些简单的运算, 运算的结果可以给jsp的标签的属性赋值，也可以直接输出。<ol>
-<li>算数运算<ul>
-<li><code>+ -  * / %</code> <strong>注：加号只能求和</strong></li>
-</ul>
-</li>
-<li>关系运算<ul>
-<li><code>&gt;,&lt;,&lt;=,&gt;=,==,!=</code></li>
-</ul>
-</li>
-<li>逻辑运算<ul>
-<li><code>&amp;&amp; || !</code></li>
-</ul>
-</li>
-<li>empty运算<ul>
-<li>用来判断 集合是否为空 或者是否为一个空字符串，如果为空则返回true</li>
-<li>格式： ${empty 想要查找的绑定名}</li>
-</ul>
-</li>
-<li><img src="https://s2.ax1x.com/2019/06/17/V76SBD.png" alt="655"><img src="https://s2.ax1x.com/2019/06/17/V76PNd.png" alt="996"></li>
+<li><p>管理对象</p>
+<ol>
+<li>管理对象包含：对象的创建，初始化，释放资源,销毁</li>
 </ol>
 </li>
-<li>读取请求参数值(用的不多)<ol>
-<li>例如向jsp传入参数 <em>e3.jsp?username=zac</em></li>
-<li>格式<ol>
-<li>${param.username}等价于request.getParameter(“username”)</li>
-<li>${paramValues.username}等价于request.getParameterValues(“username”)  </li>
+<li><p>维护对象关系</p>
+</li>
 </ol>
 </li>
-<li><img src="https://s2.ax1x.com/2019/06/17/V76eu8.png" alt="4457"><img src="https://s2.ax1x.com/2019/06/17/V76nHg.png" alt="364"><img src="https://s2.ax1x.com/2019/06/17/V76KEQ.png" alt="654"></li>
+<li><h4 id="如何去使用spring管理对象的创建bean的创建"><a href="#如何去使用spring管理对象的创建bean的创建" class="headerlink" title="如何去使用spring管理对象的创建bean的创建"></a>如何去使用spring管理对象的创建<strong>bean的创建</strong></h4><ol>
+<li><p>搭建springioc开发环境</p>
+<ol>
+<li><p>引入相关jar包</p>
+</li>
+<li><p>在src添加applicationContext.xml</p>
+</li>
+<li><p>在applicationContext.xml文件当中配置相关的组件<em>这里拿bean举例</em>   <strong>其实使用框架无非就是将在项目当中要用到的组件配置到applicationContext.xml文件当中，当我们在项目当中要用到这些组件所对应的对象的时候，直接向applicationContext中去获取（省时间）</strong></p>
+<blockquote>
+<p>配置方式1 通过构造方法<strong><em>该组件对象是通过之接new来创建的</em></strong></p>
+<blockquote>
+<p> <code>&lt;bean id=&quot;c&quot; class=&quot;java.util.GregorianCalendar&quot;&gt;&lt;/bean&gt;</code></p>
+</blockquote>
+<p>配置方式2 通过静态工厂方法<strong><em>组件对象是通过类的静态方法获取的</em></strong></p>
+<blockquote>
+<p><bean id="c2" class="java.util.GregorianCalendar" factory-method="getInstance"></bean></p>
+</blockquote>
+<p>配置方式3 通过对象工厂方法 <strong><em>组件对象是通过另外一个对象的方法来获取的</em></strong></p>
+<blockquote>
+<p><code>&lt;bean id=&quot;date&quot; factory-bean=&quot;c1&quot; factory-method=&quot;getTime&quot;&gt;&lt;/bean&gt;</code></p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>编写一个类包含<strong>main</strong>方法<br> <img src="https://s2.ax1x.com/2019/06/21/ZSqBsH.png" alt="45623"></p>
+</li>
+<li><p>运行结果<br> <img src="https://s2.ax1x.com/2019/06/21/ZSqgFP.png" alt="45642">    </p>
+</li>
+<li><p>使用spring容器的图解 <img src="https://s2.ax1x.com/2019/06/21/ZSqpPf.md.png" alt="456789"></p>
+</li>
 </ol>
+</li>
+</ol>
+</li>
+<li><h4 id="管理对象-如何通过spring去管理对象的初始化，释放资源-销毁。-对象创建的方式单例，非单例"><a href="#管理对象-如何通过spring去管理对象的初始化，释放资源-销毁。-对象创建的方式单例，非单例" class="headerlink" title="管理对象  ,如何通过spring去管理对象的初始化，释放资源,销毁。 对象创建的方式单例，非单例"></a><strong>管理对象</strong>  ,<em>如何通过spring去管理对象的初始化，释放资源,销毁。</em> 对象创建的方式<em>单例，非单例</em></h4><ol>
+<li><h5 id="spring创建bean对象的控制"><a href="#spring创建bean对象的控制" class="headerlink" title="spring创建bean对象的控制"></a>spring创建bean对象的控制</h5><ol>
+<li>控制对象的创建方式（使用范围）<em>就是单例和非单例</em>    <ol>
+<li>在<bean>元素中使用scope属性控制，scope可以支持sigleton(单例)prototype(非单例) 默认值是singleton</bean></li>
+<li><code>&lt;bean scope=&quot;singleton&quot;&gt;</code>表示该组件在spring容器里面只有一个bean对象，表示该组件每次ac.getBean(“id”)都会返回<strong>同一个对象</strong>。<strong><em>比如dao就用这种方式来定义</em></strong></li>
+<li><img src="https://s2.ax1x.com/2019/06/21/Zp9r3n.png" alt="23123"><img src="https://s2.ax1x.com/2019/06/21/Zp9cuV.png" alt="8566">结果为true</li>
+<li><code>&lt;bean scope=&quot;prototype&quot;&gt;</code>表示该组件每次ac.getBean(“id”)都会返回一个新的对象。 <ol>
+<li><img src="https://s2.ax1x.com/2019/06/21/Zp9j4H.png" alt="4564"><img src="https://s2.ax1x.com/2019/06/21/Zp9cuV.png" alt="8566">结果为false</li>
+</ol>
+</li>
+<li><strong>如果在applicationContext.xml文件中的一个组件所对应的那个组件类的结构如下所示，那么这个组件的scope属性必须为prototype</strong><blockquote>
+<p>public class xx{</p>
+<pre><code>private User u; 
+
+public void xxx{
+  xxx方法对本类的属性进行了操作
+  }</code></pre><p> }    </p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h5 id="指定对象初始化方法"><a href="#指定对象初始化方法" class="headerlink" title="指定对象初始化方法"></a>指定对象初始化方法</h5><ol>
+<li>init-method方法的使用<ol>
+<li>利用<bean>元素的<code>init-method</code>指定。<em>当创建对象后，自动执行Init-method方法</em>   <em>其实我们也可以直接在对象创建的时候通过类构造器初始化</em></bean></li>
+<li>图解<br><img src="https://s2.ax1x.com/2019/06/22/ZpVvcQ.png" alt="2312"><img src="https://s2.ax1x.com/2019/06/22/ZpZSns.png" alt="4432"><img src="https://s2.ax1x.com/2019/06/22/ZpZGge.png" alt="44321"><img src="https://s2.ax1x.com/2019/06/22/ZpZUHI.png" alt="123"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h5 id="指定对象销毁（一般都用在单利模式类当中用到了很多集合，比如流，这个方法里面就可以写流的资源释放操作）"><a href="#指定对象销毁（一般都用在单利模式类当中用到了很多集合，比如流，这个方法里面就可以写流的资源释放操作）" class="headerlink" title="指定对象销毁（一般都用在单利模式类当中用到了很多集合，比如流，这个方法里面就可以写流的资源释放操作）"></a>指定对象销毁（一般都用在单利模式类当中用到了很多集合，比如流，这个方法里面就可以写流的资源释放操作）</h5><ol>
+<li>利用<bean>元素的destory-method指定。</bean></li>
+<li>满足以下条件该方法才有效。<ul>
+<li>组件对象为单例模式</li>
+<li>调用AbstractApplicationContext容器对象的close()方法</li>
+</ul>
+</li>
+<li>图解<br> <img src="https://s2.ax1x.com/2019/06/22/ZpZwUP.png" alt="321"><img src="https://s2.ax1x.com/2019/06/22/ZpZ04f.png" alt="465"><img src="https://s2.ax1x.com/2019/06/22/ZpZr8S.png" alt="32"><img src="https://s2.ax1x.com/2019/06/22/ZpZfU0.png" alt="75"></li>
+</ol>
+</li>
+<li><h5 id="控制单例对象创建时机"><a href="#控制单例对象创建时机" class="headerlink" title="控制单例对象创建时机"></a>控制单例对象创建时机</h5><ol>
+<li>在默认情况下，单例对象是spring容器创建时实例化；可以使用<bean>元素的lazy-init=true属相将创建时机推迟到getBean()方法时调用<strong>只对单例模式有用</strong>。</bean></li>
+<li>图解<ol>
+<li><strong>在不设置lazy-init的情况下等于lazy-init=false,单例组件会随着容器的创建而初始化</strong><img src="https://s2.ax1x.com/2019/06/22/Zpepxe.png" alt="656"><img src="https://s2.ax1x.com/2019/06/22/ZpeAat.png" alt="787"><img src="https://s2.ax1x.com/2019/06/22/ZpeEIP.png" alt="696">结果的话，容器的创建时，该单利组件就初始化了。另外一种就不演示了，</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h5 id="当然我们也可以通过在根元素中设置所有的的的管理操作"><a href="#当然我们也可以通过在根元素中设置所有的的的管理操作" class="headerlink" title="当然我们也可以通过在根元素中设置所有的的的管理操作"></a>当然我们也可以通过在根元素<beans>中设置所有的的<bean>的管理操作</bean></beans></h5><ol>
+<li><img src="https://s2.ax1x.com/2019/06/22/Zpe3aq.md.png" alt="3594">    </li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h4 id="维护对象关系"><a href="#维护对象关系" class="headerlink" title="维护对象关系"></a><strong>维护对象关系</strong></h4><ol>
+<li><h5 id="采用注入方式建立对象关系。Dependency-Injexttion-DI依赖注入"><a href="#采用注入方式建立对象关系。Dependency-Injexttion-DI依赖注入" class="headerlink" title="采用注入方式建立对象关系。Dependency Injexttion                DI依赖注入"></a>采用注入方式建立对象关系。<em>Dependency Injexttion                DI依赖注入</em></h5></li>
+<li><h5 id="依赖注入分类"><a href="#依赖注入分类" class="headerlink" title="依赖注入分类"></a>依赖注入分类</h5><ol>
+<li><h6 id="set注入方法注入-创建方式"><a href="#set注入方法注入-创建方式" class="headerlink" title="set注入方法注入 创建方式"></a>set注入方法注入 <em>创建方式</em></h6><ol>
+<li>编写类<ol>
+<li><img src="https://s2.ax1x.com/2019/06/22/Zpmqtx.png" alt="369"><strong>这个类当中必须有属性所对应的set方法</strong></li>
+</ol>
+</li>
+<li>applicationContext.xml配置<ol>
+<li><img src="https://s2.ax1x.com/2019/06/22/ZpmLh6.png" alt="235"> <strong>值得注意的是配置文件当中<property>当中的name属性的值必须和定义的那个类中的属性相同名</property></strong></li>
+</ol>
+</li>
+<li>编写main方法调试<ol>
+<li><img src="https://s2.ax1x.com/2019/06/22/ZpmX9K.png" alt="746"><strong>在main方法里面比较两种为属性赋值的方式，可见传入参数和组件对象的耦合性是有多么的低，当我们需要修改传入的参数时只需要修改xml文件</strong></li>
+</ol>
+</li>
+<li>测试结果<ol>
+<li><img src="https://s2.ax1x.com/2019/06/22/Zpn9HA.png" alt="956">  <ol start="2">
+<li><h6 id="构造注入-创建方式"><a href="#构造注入-创建方式" class="headerlink" title="构造注入 创建方式"></a>构造注入 <em>创建方式</em></h6></li>
+</ol>
+</li>
+<li>编写类<ol>
+<li><img src="https://s2.ax1x.com/2019/06/22/ZpnPAI.png" alt="145"></li>
+</ol>
+</li>
+<li>配置xml文件<ol>
+<li><img src="https://s2.ax1x.com/2019/06/22/ZpniNt.png" alt="655">        </li>
+</ol>
+</li>
+<li>main方法调试<ol>
+<li><img src="https://s2.ax1x.com/2019/06/22/ZpnF4P.png" alt="581"></li>
+</ol>
+</li>
+<li>测试结果<ol>
+<li><img src="https://s2.ax1x.com/2019/06/22/ZpnA9f.png" alt="556"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h5 id="依赖注入的小案例"><a href="#依赖注入的小案例" class="headerlink" title="依赖注入的小案例"></a>依赖注入的小案例</h5><ol>
+<li><p>图解</p>
+<ul>
+<li><img src="https://s2.ax1x.com/2019/06/22/ZpnUb9.png" alt="2265"></li>
+</ul>
+</li>
+<li><p>编写student类</p>
+<ul>
+<li><img src="https://s2.ax1x.com/2019/06/22/ZpndER.png" alt="563"></li>
+</ul>
+</li>
+<li><p>配置xml文件</p>
+<ul>
+<li><img src="https://s2.ax1x.com/2019/06/22/ZpnwU1.png" alt="12456"><strong>注意ref属性的使用</strong></li>
+</ul>
+</li>
+<li><p>main</p>
+<ul>
+<li><img src="https://s2.ax1x.com/2019/06/22/Zpn04x.png" alt="569"></li>
+</ul>
+</li>
+<li><p>测试结果</p>
+<ul>
+<li><img src="https://s2.ax1x.com/2019/06/22/ZpnDC6.png" alt="745"></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><h5 id="装配注入"><a href="#装配注入" class="headerlink" title="装配注入"></a>装配注入</h5><ul>
+<li>这种注入方式也是set注入的方式        </li>
+<li>格式 <bean autowire> </bean></li>
+<li>用于指定自动注入规则，属性可以使用byType,byName,constructor等，用于简化注入配置<ul>
+<li><strong>byType会依据容器当中的符合set()参数类型的组件添加到被注入组件中</strong>列举上面的例子的student,phone，computer的关系。<img src="https://s2.ax1x.com/2019/06/22/Z9AgeI.png" alt="4560"><img src="https://s2.ax1x.com/2019/06/22/Z9AolQ.png" alt="852"><strong>使用byType类型匹配注入需要注意，有两个及以上匹配会出异常。</strong> </li>
+<li><strong>byName则依据容器当中符合名字的组件对象注入组件中</strong><img src="https://s2.ax1x.com/2019/06/22/Z9EepD.png" alt="Z9EepD.png"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="各种类型信息的注入配置"><a href="#各种类型信息的注入配置" class="headerlink" title="各种类型信息的注入配置"></a>各种类型信息的注入配置</h5><ol>
+<li>注入字符串，数值单个数值</li>
+<li>注入bean对象</li>
+<li>注入集合list,set，map，properties</li>
+<li>spring表达式注入<ol>
+<li>Spring表达式的用途： 如果想要在一个组件当中set注入时：使用另外一个组件或者是<a href="util:properties/Map" target="_blank" rel="noopener">util:properties/Map</a>组件当中的属性的话，就得用到它。</li>
+<li>格式<ul>
+<li>#{beanID.属性/key}</li>
+</ul>
+</li>
+<li>注意事项：<ol>
+<li>如果注入的是采用<code>beanID.属性</code>的形式，那么那个Bean当中的那个属性必须得有所对应的get（）</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>注意的事项<pre><code>- date注入在构造方法那里转化![8854](https://s2.ax1x.com/2019/06/28/ZM5C7t.png)</code></pre><ul>
+<li>注入list <img src="https://s2.ax1x.com/2019/06/28/ZM5E9S.png" alt="8562"></li>
+<li>注入空值 <img src="https://s2.ax1x.com/2019/06/28/ZM5Ftf.png" alt="8568"></li>
+<li>注入list list中的元素 为person对象 <ref bean><img src alt></ref></li>
+<li>map注入 <img src="https://s2.ax1x.com/2019/06/28/ZM5B4K.png" alt="654"></li>
+<li>properties注入 <img src="https://s2.ax1x.com/2019/06/28/ZM5yge.png" alt="3555"></li>
+<li>集合的外部定义 <img src="https://s2.ax1x.com/2019/06/28/ZM5fEt.png" alt="235665"></li>
+<li>propertiest外部定义并且是通过外部读取的方式  <img src="https://s2.ax1x.com/2019/06/28/ZM5IC8.png" alt="23663"><img src="https://s2.ax1x.com/2019/06/28/ZM5o8S.png" alt="856"><img src="https://s2.ax1x.com/2019/06/28/ZM57vQ.png" alt="85523"></li>
+<li>当采用spring表达式注入的时候想用list/set中的值来注入 <em>详细看spring03</em><img src="https://s2.ax1x.com/2019/06/28/ZM5Lbn.png" alt="5236"></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h4 id="通过注解配置应用ioc（配置xml文件）"><a href="#通过注解配置应用ioc（配置xml文件）" class="headerlink" title="通过注解配置应用ioc（配置xml文件）"></a><strong>通过注解配置应用ioc（配置xml文件）</strong></h4><ol>
+<li>如果一个项目当中有好几千个组件需要配置在xml文件当中，那岂不是写死你？所以就出现了这项技术代替手写<bean>     详细看p4 01:37:25  spring04</bean></li>
+<li><h5 id="组件自动扫描"><a href="#组件自动扫描" class="headerlink" title="组件自动扫描"></a>组件自动扫描</h5><ul>
+<li>注解：在类定义，方法定义，成员变量定义前面使用，格式为@注解标记名</li>
+<li>他可以按照指定的包路径，将包下所有组件扫描，如果发现组件类定义前有以下标记，会将组件扫描到spring容器。</li>
+<li>@Component  其他组件</li>
+<li>@Controller  控制层组件</li>
+<li>@Service     业务层组件</li>
+<li>@Respository 数据访问层组件Dao</li>
+<li>@Named(需要引入第三方标准包)</li>
+<li>@Scope 控制对象的单例和非单例</li>
+<li>@postconstruct  指定init-method</li>
+<li>@predestory 指定 destory-method</li>
+<li><strong>要注意的就是如果在类名前面使用了组件自动扫描如<code>@Component</code>那么这个组件在ioc容器当中的id名字就为该类首字母小写的类名，当然我们也可以指定<code>@Component(&quot;aa&quot;)</code></strong></li>
+</ul>
+</li>
+<li><h5 id="注解注入"><a href="#注解注入" class="headerlink" title="注解注入"></a>注解注入</h5><ul>
+<li>@Resource  //默认按名称注入 如果找不着 就按照类型注入</li>
+<li>@Autowired  等价于第一种 都可以实现注入。如果不存在多个匹配类型，使用@Resource和@Autowired都可以。如果存在多个匹配类型，建议按照名称注入.格式:<code>@Autowired @Qualifier(&quot;指定名称&quot;)</code>和
+<code>@Resource(name=&quot;指定名称&quot;)</code> 他俩都可以写在属性定义和Set方法定义前 </li>
+<li><code>spring表达式注入</code> :用来注入非对象类型的属性，一般这些属性值都是存储在properties（集合）当中.使用格式：在属性定义前加上@value(“spring表达式”)。 详细看spring04</li>
+<li><strong>通过注解的方式注入我们在组件类当中可以不用写属性的set方法</strong></li>
+<li>set注入建议用resource,构造器注入建议使用autowired</li>
+</ul>
 </li>
 </ol>
 </li>
@@ -624,8 +733,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/10/Filter和Listener的使用/" rel="next" title="Filter和Listener的使用">
-                <i class="fa fa-chevron-left"></i> Filter和Listener的使用
+              <a href="/2019/06/18/AJAX/" rel="next" title="AJAX">
+                <i class="fa fa-chevron-left"></i> AJAX
               </a>
             
           </div>
@@ -634,8 +743,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/18/AJAX/" rel="prev" title="AJAX">
-                AJAX <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/23/springwebmvc/" rel="prev" title="Spring Web Mvc">
+                Spring Web Mvc <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -807,7 +916,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp标签"><span class="nav-number">1.</span> <span class="nav-text">jsp标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Jsp标签？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Jsp标签？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jstl-javaa-standard-tag-lib-java标准标签库"><span class="nav-number">1.2.</span> <span class="nav-text">jstl(javaa standard tag lib java标准标签库)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jstl-是什么？"><span class="nav-number">1.3.</span> <span class="nav-text">jstl 是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么使用jstl"><span class="nav-number">1.4.</span> <span class="nav-text">怎么使用jstl?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jstl当中几个核心的标签"><span class="nav-number">1.5.</span> <span class="nav-text">jstl当中几个核心的标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义标签"><span class="nav-number">1.6.</span> <span class="nav-text">自定义标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#el表达式"><span class="nav-number">2.</span> <span class="nav-text">el表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是el表达式？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是el表达式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#el表达式的使用"><span class="nav-number">2.2.</span> <span class="nav-text">el表达式的使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于框架学习"><span class="nav-number">1.</span> <span class="nav-text">关于框架学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring框架"><span class="nav-number">2.</span> <span class="nav-text">spring框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#spring框架作用"><span class="nav-number">2.1.</span> <span class="nav-text">spring框架作用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring框架概述"><span class="nav-number">3.</span> <span class="nav-text">spring框架概述</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number"></span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#spingIOC应用"><span class="nav-number">1.</span> <span class="nav-text">spingIOC应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念-amp-作用："><span class="nav-number">1.1.</span> <span class="nav-text">概念&amp;作用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何去使用spring管理对象的创建bean的创建"><span class="nav-number">1.2.</span> <span class="nav-text">如何去使用spring管理对象的创建bean的创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管理对象-如何通过spring去管理对象的初始化，释放资源-销毁。-对象创建的方式单例，非单例"><span class="nav-number">1.3.</span> <span class="nav-text">管理对象  ,如何通过spring去管理对象的初始化，释放资源,销毁。 对象创建的方式单例，非单例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#spring创建bean对象的控制"><span class="nav-number">1.3.1.</span> <span class="nav-text">spring创建bean对象的控制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#指定对象初始化方法"><span class="nav-number">1.3.2.</span> <span class="nav-text">指定对象初始化方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#指定对象销毁（一般都用在单利模式类当中用到了很多集合，比如流，这个方法里面就可以写流的资源释放操作）"><span class="nav-number">1.3.3.</span> <span class="nav-text">指定对象销毁（一般都用在单利模式类当中用到了很多集合，比如流，这个方法里面就可以写流的资源释放操作）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#控制单例对象创建时机"><span class="nav-number">1.3.4.</span> <span class="nav-text">控制单例对象创建时机</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#当然我们也可以通过在根元素中设置所有的的的管理操作"><span class="nav-number">1.3.5.</span> <span class="nav-text">当然我们也可以通过在根元素中设置所有的的的管理操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#维护对象关系"><span class="nav-number">1.4.</span> <span class="nav-text">维护对象关系</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#采用注入方式建立对象关系。Dependency-Injexttion-DI依赖注入"><span class="nav-number">1.4.1.</span> <span class="nav-text">采用注入方式建立对象关系。Dependency Injexttion                DI依赖注入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#依赖注入分类"><span class="nav-number">1.4.2.</span> <span class="nav-text">依赖注入分类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#set注入方法注入-创建方式"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">set注入方法注入 创建方式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#构造注入-创建方式"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">构造注入 创建方式</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#依赖注入的小案例"><span class="nav-number">1.4.3.</span> <span class="nav-text">依赖注入的小案例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#装配注入"><span class="nav-number">1.4.4.</span> <span class="nav-text">装配注入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#各种类型信息的注入配置"><span class="nav-number">1.4.5.</span> <span class="nav-text">各种类型信息的注入配置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过注解配置应用ioc（配置xml文件）"><span class="nav-number">1.5.</span> <span class="nav-text">通过注解配置应用ioc（配置xml文件）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#组件自动扫描"><span class="nav-number">1.5.1.</span> <span class="nav-text">组件自动扫描</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注解注入"><span class="nav-number">1.5.2.</span> <span class="nav-text">注解注入</span></a></li></ol></li></ol></li></ol></li></div>
             
 
           </div>
