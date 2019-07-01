@@ -99,6 +99,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/23/ZFwO6f.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/23/ZF6Vnx.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/26/ZmeCSe.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl4GwR.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/27/Zmdic9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/27/ZmdE0x.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/27/ZmdeAK.png">
@@ -122,7 +123,9 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZujJOO.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/28/Zujx91.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/28/Zujz1x.png">
-<meta property="og:updated_time" content="2019-06-28T05:01:02.124Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZKaZvQ.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZKaMEq.png">
+<meta property="og:updated_time" content="2019-06-30T04:42:43.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Web Mvc">
 <meta name="twitter:description" content="什么是 spring web mvc ? 用于开发mvc结构的web程序，需要使用到ioc功能。详细看p5 3：00：00  MVC思想 将程序组件分为模型，视图，控制器三部分。  spring web mvc 处理流程 黑色字体部分是我们需要写的   spring web mvc小案例 流程    /hello.do –&amp;gt; spring web mvc –&amp;gt; /WEB-INF/hel">
@@ -473,7 +476,7 @@
 <hr>
 <h3 id="通过注解配置applicationContext-xml"><a href="#通过注解配置applicationContext-xml" class="headerlink" title="通过注解配置applicationContext.xml"></a>通过注解配置applicationContext.xml</h3><ol>
 <li><h4 id="对于hadlemapping-详细看p7-传智spingmvc04"><a href="#对于hadlemapping-详细看p7-传智spingmvc04" class="headerlink" title="对于hadlemapping 详细看p7 传智spingmvc04"></a>对于hadlemapping 详细看p7 传智spingmvc04</h4><ol>
-<li>使用RequestMappingHanlderMapping组件<code>@RequestMapping(&quot;/login.do&quot;)</code>该标记写在controller业务方法前  并且在applicationContext.xml文件当中写上<code>&lt;mvc:annotation-driven/&gt;</code>就可以直接省去以往的handlemapping的bean标签</li>
+<li>使用RequestMappingHanlderMapping组件<code>@RequestMapping(&quot;/login.do&quot;)</code>该标记写在controller业务方法前或者是业务类前  并且在applicationContext.xml文件当中写上<code>&lt;mvc:annotation-driven/&gt;</code>就可以直接省去以往的handlemapping的bean标签<img src="https://s2.ax1x.com/2019/06/30/Zl4GwR.png" alt="856">这里在业务类和业务方法前头加上了@requestMapping()：<strong>表示发送的请求地址为WebRoot/cost/list.do,在业务类前面加上@requestMapping()要注意。带斜杠是相对于根路径 的路径，不带是相对于父路径 的路径</strong></li>
 </ol>
 </li>
 <li><h4 id="对于Controller"><a href="#对于Controller" class="headerlink" title="对于Controller"></a>对于Controller</h4><ol>
@@ -580,15 +583,21 @@
 <hr>
 <h3 id="如何实现登陆权限检查"><a href="#如何实现登陆权限检查" class="headerlink" title="如何实现登陆权限检查"></a>如何实现登陆权限检查</h3><ol>
 <li>使用session进行约定值判断</li>
-<li>实现方法：<pre><code>1. 使用filter过滤器进行拦截，操作判断每一个.do的servlet当中有没有session所绑定的数据
-2. 采用拦截器    
-    1. 拦截器：他是springmvc当中特有的组件 
-    2. 拦截器作用：拦截器可以再controller之前拦截，也可以在controller之后拦截；也可以在jsp解析完毕给浏览器输出之前拦截。 
-3. 使用格式：
-    1. 编写一个类实现HandlerInterceptor接口，在每重载的方法里实现相应的逻辑![756](https://s2.ax1x.com/2019/06/28/ZKaZvQ.md.png)
-    2. 配置applicationContext.xml文件![85623](https://s2.ax1x.com/2019/06/28/ZKaMEq.png)
-    3. 显示效果
-        - ![9642](https://s2.ax1x.com/2019/06/28/ZKt2bq.png)</code></pre></li>
+<li>实现方法：<ol>
+<li>使用filter过滤器进行拦截，操作判断每一个.do的servlet当中有没有session所绑定的数据</li>
+<li>采用拦截器    <ol>
+<li>拦截器：他是springmvc当中特有的组件 </li>
+<li>拦截器作用：拦截器可以再controller之前拦截，也可以在controller之后拦截；也可以在jsp解析完毕给浏览器输出之前拦截。 </li>
+</ol>
+</li>
+<li>使用格式：<ol>
+<li>编写一个类实现HandlerInterceptor接口，在每重载的方法里实现相应的逻辑<img src="https://s2.ax1x.com/2019/06/28/ZKaZvQ.md.png" alt="756"></li>
+<li>配置applicationContext.xml文件<img src="https://s2.ax1x.com/2019/06/28/ZKaMEq.png" alt="85623"></li>
+<li>显示效果<pre><code>- ![9642](https://s2.ax1x.com/2019/06/28/ZKt2bq.png)</code></pre></li>
+</ol>
+</li>
+</ol>
+</li>
 </ol>
 
       
@@ -716,7 +725,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

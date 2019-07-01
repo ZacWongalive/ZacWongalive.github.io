@@ -110,7 +110,8 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsHIKJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/VsqGkt.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/09/Vsq21U.png">
-<meta property="og:updated_time" content="2019-06-19T16:31:42.245Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zlxqld.png">
+<meta property="og:updated_time" content="2019-06-30T04:29:34.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sevlet和Jsp相关的概念">
 <meta name="twitter:description" content="什么是servlet? 是sun公司制定的一种用来拓展web服务器功能 的 组件规范。    拓展web服务器功能的含义  web服务器只能处理静态的资源请求（即需要事先将html文件准备好),可以使用servlet来扩展（即web服务器可以通过servlet来处理动态资源的请求，比如访问数据库）。   组件规范的含义  什么是组件？    符合一定规范，实现部分功能的，并且需要部署到响应的容器中">
@@ -918,17 +919,18 @@ a7.jsp文件</code></pre></li>
 </ul>
 <hr>
 <h3 id="关于路径的相关问题"><a href="#关于路径的相关问题" class="headerlink" title="关于路径的相关问题"></a>关于路径的相关问题</h3><ul>
-<li>涉及到的内容有：链接地址，表单提交地址，重定向，转发</li>
+<li>涉及到的内容有：链接地址，表单提交地址，重定向，转发 详细看p10  1：30：00 和p10 1:56:13</li>
 <li>如果填写下列路径  <pre><code>&gt; &lt; a href=&quot;&quot;&gt;&lt;/a &gt; 
 &gt;  &lt; form action=&quot;&quot;&gt;
 &gt;  response.sendRedirect(&quot;&quot;)
 &gt;  request.getRequestDispatcher(&quot;&quot;)</code></pre></li>
-<li>绝对路径 <em>以”/“开头的路径</em></li>
-<li>相对路径 <em>不以”/“开头的路径</em></li>
+<li>绝对路径： <em>以”/“开头的路径</em></li>
+<li>相对路径： <em>不以”/“开头的路径</em></li>
 <li>如何写绝对路径？<ul>
-<li><strong>链接地址，表单提交地址，重定向，从应用名开始写</strong>  <strong>转发从应用名之后开始写</strong></li>
+<li><strong>链接地址，表单提交地址，重定向，从应用名开始写</strong>  <strong>转发从应用名之后开始写,要使用string request.getContextPath()获取应用名,在web.xml中配置的servelt的url-parttern的路径的根目录是webRoot</strong><img src="https://s2.ax1x.com/2019/06/30/Zlxqld.png" alt="8569"></li>
 </ul>
 </li>
+<li><a href="https://blog.csdn.net/baidu_37107022/article/details/75578394" target="_blank" rel="noopener">相关路径问题文章</a></li>
 </ul>
 
       
@@ -972,8 +974,8 @@ a7.jsp文件</code></pre></li>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/10/状态管理/" rel="prev" title="状态管理">
-                状态管理 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/10/Filter和Listener的使用/" rel="prev" title="Filter和Listener的使用">
+                Filter和Listener的使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1056,7 +1058,7 @@ a7.jsp文件</code></pre></li>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

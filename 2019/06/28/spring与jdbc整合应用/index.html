@@ -86,23 +86,37 @@
 
 
 
-<meta name="description" content="Spring与jdbc整合的应用 详细看p11 提供了编写Dao的工具类  JDBCTemplate JdbcTemplate.update(“insert into…”,参数)   提供了AOP式事务管理 1.不需要在方法中追加事务提交和回滚 提供了统一的异常处理 DataAccessException无论你使用的是jdbc，还是herbinate,jpa还是啥的技术。他们几个抛出的异常都为Da">
+<meta name="description" content="Spring与jdbc整合的应用 详细看p11 提供了编写Dao的工具类  JDBCTemplate JdbcTemplate.update(“insert into…”,参数) 在hibernate中，使用hibernateTemplate   提供了AOP式事务管理 1.不需要在方法中追加事务提交和回滚 提供了统一的异常处理 DataAccessException无论你使用的是jdbc，还是h">
 <meta name="keywords" content="导航,分享">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring与jdbc整合的应用">
 <meta property="og:url" content="http://yoursite.com/2019/06/28/spring与jdbc整合应用/index.html">
 <meta property="og:site_name" content="黑人Zac的博客">
-<meta property="og:description" content="Spring与jdbc整合的应用 详细看p11 提供了编写Dao的工具类  JDBCTemplate JdbcTemplate.update(“insert into…”,参数)   提供了AOP式事务管理 1.不需要在方法中追加事务提交和回滚 提供了统一的异常处理 DataAccessException无论你使用的是jdbc，还是herbinate,jpa还是啥的技术。他们几个抛出的异常都为Da">
+<meta property="og:description" content="Spring与jdbc整合的应用 详细看p11 提供了编写Dao的工具类  JDBCTemplate JdbcTemplate.update(“insert into…”,参数) 在hibernate中，使用hibernateTemplate   提供了AOP式事务管理 1.不需要在方法中追加事务提交和回滚 提供了统一的异常处理 DataAccessException无论你使用的是jdbc，还是h">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZMo3y4.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZMoaY6.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZMoD6e.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZMocTI.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/28/ZMohp8.png">
-<meta property="og:updated_time" content="2019-06-28T14:14:23.960Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQnCN9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/29/ZQnF91.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl4tFx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl4NY6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl4dSO.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl4JT1.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl406e.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl4BOH.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl4rmd.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl4s0A.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl4yTI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl5k9K.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl5A1O.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/30/Zl5EcD.png">
+<meta property="og:updated_time" content="2019-06-30T05:49:13.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring与jdbc整合的应用">
-<meta name="twitter:description" content="Spring与jdbc整合的应用 详细看p11 提供了编写Dao的工具类  JDBCTemplate JdbcTemplate.update(“insert into…”,参数)   提供了AOP式事务管理 1.不需要在方法中追加事务提交和回滚 提供了统一的异常处理 DataAccessException无论你使用的是jdbc，还是herbinate,jpa还是啥的技术。他们几个抛出的异常都为Da">
+<meta name="twitter:description" content="Spring与jdbc整合的应用 详细看p11 提供了编写Dao的工具类  JDBCTemplate JdbcTemplate.update(“insert into…”,参数) 在hibernate中，使用hibernateTemplate   提供了AOP式事务管理 1.不需要在方法中追加事务提交和回滚 提供了统一的异常处理 DataAccessException无论你使用的是jdbc，还是h">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/06/28/ZMo3y4.png">
 
 
@@ -406,6 +420,7 @@
 <li>提供了编写Dao的工具类 <ol>
 <li>JDBCTemplate</li>
 <li>JdbcTemplate.update(“insert into…”,参数)</li>
+<li>在hibernate中，使用hibernateTemplate</li>
 </ol>
 </li>
 <li>提供了AOP式事务管理<br> 1.不需要在方法中追加事务提交和回滚</li>
@@ -416,13 +431,56 @@
 </ol>
 <hr>
 <h3 id="Spring整合jdbc步骤"><a href="#Spring整合jdbc步骤" class="headerlink" title="Spring整合jdbc步骤"></a>Spring整合jdbc步骤</h3><ol>
-<li>引入spring(ioc,aop,jdbc)开发包，添加src/applicationContext.xml文件，和数据库驱动    </li>
+<li>引入spring(ioc,aop,jdbc)开发包，添加src/applicationContext.xml文件，和数据库驱动,dbcp驱动包    </li>
 <li>编写实体类<img src="https://s2.ax1x.com/2019/06/28/ZMo3y4.png" alt="526"></li>
 <li>编写DAO组件<img src="https://s2.ax1x.com/2019/06/28/ZMoaY6.png" alt="6325"></li>
 <li>在applicationContext.xml中扫描EmpDAO,注入jdbcTemplate对象<img src="https://s2.ax1x.com/2019/06/28/ZMoD6e.png" alt="846"></li>
 <li>导入dbcpjar包，创建连接池对象<img src="https://s2.ax1x.com/2019/06/28/ZMocTI.png" alt="543"></li>
 <li>配置jdbcTemplate,在它的<bean>中注入dataSource<em>连接池对象</em>，<img src="https://s2.ax1x.com/2019/06/28/ZMohp8.png" alt="785"></bean></li>
 </ol>
+<hr>
+<h3 id="Template查询和rowmapper"><a href="#Template查询和rowmapper" class="headerlink" title="Template查询和rowmapper"></a>Template查询和rowmapper</h3><ol>
+<li>详细看 springjdbc01</li>
+<li>在使用jdbc查询的时候使用template会出现rowmapper<code>template.query(sql, rowmapper)</code>所以就要使用到rowmapper<ul>
+<li>rowmapper:sping中的RowMapper可以将数据中的每一行数据封装成用户定义的类. </li>
+</ul>
+</li>
+<li>rowmapper的使用<ol>
+<li>定义一个类实现rowmapper接口<img src="https://s2.ax1x.com/2019/06/29/ZQnCN9.png" alt="9855"></li>
+<li>在Dao类当中功能方法,注意区分query()和queryforobject()<img src="https://s2.ax1x.com/2019/06/29/ZQnF91.png" alt="855"></li>
+<li>另外，值得注意：从数据库当中查询出来的一张表对应一个rowmapper和一个实体对象，如果我们通过关联查询查出来的多条字段，那么就得设计一个实体类，其中包括了这些字段，然后再用rowmapper去封装数据</li>
+<li>如果sql语句写的是这个<code>select count(*) from emp</code> 它返回的是一个值 我们就可以直接使用<code>template.queryforint()</code>所以说<blockquote>
+<p>template.query() 返回的是list集合<br>template.queryforonject() 返回的是一个对象<br>template.queryforint() 返回的是一个值    </p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="springmvc和jdbc的小案例"><a href="#springmvc和jdbc的小案例" class="headerlink" title="springmvc和jdbc的小案例"></a>springmvc和jdbc的小案例</h3><ul>
+<li>详细看spingmvcjdbc02</li>
+<li>案例流程：就是通过web的形式浏览器向服务器发送请求，然后服务器通过请求将数据库中的数据将数据以表的形式展现给用户</li>
+<li>注意知识点1：<ul>
+<li><img src="https://s2.ax1x.com/2019/06/30/Zl4tFx.png" alt="452"><img src="https://s2.ax1x.com/2019/06/30/Zl4NY6.png" alt="566"><img src="https://s2.ax1x.com/2019/06/30/Zl4dSO.png" alt="523"></li>
+<li><img src="https://s2.ax1x.com/2019/06/30/Zl4JT1.png" alt="652">这样以接口的形式注入有利于降低程序的耦合度，<strong>因为到时候我们有可能要换EMPDAO底层的实现（不用jdbctemplate而用herbinateTemplate）</strong></li>
+</ul>
+</li>
+<li>注意知识点2：<ul>
+<li>关于<code>&lt;bean class=&quot;viewreslover&quot;&gt;</code>设置问题对照视频中所讲的</li>
+<li><img src="https://s2.ax1x.com/2019/06/30/Zl406e.png" alt="856">这里业务方法返回给viewResovler的字符串是这样</li>
+<li><img src="https://s2.ax1x.com/2019/06/30/Zl4BOH.png" alt="856"><img src="https://s2.ax1x.com/2019/06/30/Zl4rmd.png" alt="856">同样如果在其他业务方法当中返回的其他路径下的jsp文件，那么问题就来了</li>
+<li><img src="https://s2.ax1x.com/2019/06/30/Zl4s0A.png" alt="8556">所以就这么设置<code>&lt;bean class=&quot;viewreslover&quot;&gt;</code> <strong>preffix那设置的 / 表示的就是webRoot目录，因为controller组件本身就是servlet的一部分，之前讲过业务方法里的modelandview put方法就是绑定数据转发的形式，以及在viewResovler里设置preffix / 就对照着servlet 之前servlet里的路径问题：转发的绝对路径写在应用名之后。 还得明白 <code>/fee/fee_list.jsp</code>的含义 因为servlet的目录是webroot,和fee是在同一级，所以想要找fee文件下的fee_list.jsp文件就直接写fee/fee_list.jsp并且在前面加上/</strong></li>
+<li><img src="https://s2.ax1x.com/2019/06/30/Zl4yTI.png" alt="452">所以，懂了码？</li>
+</ul>
+</li>
+<li>注意知识点3：<ul>
+<li>分页查询</li>
+<li>设计dao<img src="https://s2.ax1x.com/2019/06/30/Zl5k9K.png" alt="8556"></li>
+<li>设计controller<img src="https://s2.ax1x.com/2019/06/30/Zl5A1O.png" alt="8995"></li>
+<li>设计jsp超链接<img src="https://s2.ax1x.com/2019/06/30/Zl5EcD.png" alt="233"></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -464,6 +522,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/30/MyBatis/" rel="prev" title="Mybatis/iBatis">
+                Mybatis/iBatis <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -545,7 +607,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -634,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring与jdbc整合的应用-详细看p11"><span class="nav-number">1.</span> <span class="nav-text">Spring与jdbc整合的应用 详细看p11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring整合jdbc步骤"><span class="nav-number">2.</span> <span class="nav-text">Spring整合jdbc步骤</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring与jdbc整合的应用-详细看p11"><span class="nav-number">1.</span> <span class="nav-text">Spring与jdbc整合的应用 详细看p11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring整合jdbc步骤"><span class="nav-number">2.</span> <span class="nav-text">Spring整合jdbc步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Template查询和rowmapper"><span class="nav-number">3.</span> <span class="nav-text">Template查询和rowmapper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#springmvc和jdbc的小案例"><span class="nav-number">4.</span> <span class="nav-text">springmvc和jdbc的小案例</span></a></li></ol></div>
             
 
           </div>
